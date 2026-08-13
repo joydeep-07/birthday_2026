@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // import me from "../assets/images/main1.png";
 import CircularText from "./CircularText";
 import { User } from "lucide-react";
+import CountDown from "./CountDown";
 // import DownloadModal from "./DownloadModal";
 
 const Hero = () => {
@@ -81,7 +82,9 @@ const Hero = () => {
 
             {/* MESSAGE BUTTON */}
             <div className="flex justify-center mt-5 lg:justify-start">
-              <button
+
+              <CountDown/>
+              {/* <button
                 className="
         relative overflow-hidden
         px-8 py-3
@@ -105,7 +108,7 @@ const Hero = () => {
                 <span className="flex items-center text-xs justify-center gap-2">
                   SEE MY MESSAGE
                 </span>
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
