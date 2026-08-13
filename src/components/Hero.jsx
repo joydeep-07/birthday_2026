@@ -75,7 +75,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-[#52758D] text-xs xs:text-base sm:text-sm max-w-xl mx-auto lg:mx-0">
-              Today is all about celebrating you — the person who makes my days
+              Today is all about celebrating you the person who makes my days
               brighter, my smiles bigger, and my life a little more beautiful. I
               hope this year brings you everything your heart wishes for.
             </p>

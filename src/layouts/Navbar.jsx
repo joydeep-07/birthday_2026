@@ -1,18 +1,41 @@
-import React from 'react'
-import { RiMenu3Fill } from 'react-icons/ri';
+import React from "react";
+import { RiMenu3Fill } from "react-icons/ri";
 
 const Navbar = () => {
   return (
-    <div className="h-15 flex justify-between items-center px-12">
-      <div className="logo">
-        <img className='h-10' src="./logo.png" alt="" />
+    <nav className="w-full bg-[#EAF7FF] h-16 flex items-center justify-between px-5 sm:px-8 lg:px-12">
+      {/* Logo */}
+      <div className="flex items-center">
+        <img
+          src="./logo.png"
+          alt="Doraemon"
+          className="h-9 sm:h-10 w-auto object-contain"
+        />
       </div>
-      {/* <h1 className='text-2xl uppercase font-normal'>Doraemon</h1> */}
-      <div className="right">
-        <RiMenu3Fill size={22} />
-      </div>
-    </div>
-  );
-}
 
-export default Navbar
+      {/* Menu */}
+      <button
+        type="button"
+        aria-label="Open menu"
+        className="
+          group
+          w-10 h-10
+          flex items-center justify-center
+          rounded-full
+          text-[#147dcc]
+          transition-all duration-300
+          hover:bg-[#e8f7ff]
+          hover:scale-105
+          active:scale-95
+        "
+      >
+        <RiMenu3Fill
+          size={23}
+          className="transition-transform duration-300 group-hover:rotate-3"
+        />
+      </button>
+    </nav>
+  );
+};
+
+export default Navbar;
