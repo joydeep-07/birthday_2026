@@ -32,6 +32,7 @@ const CircularText = ({
 
   useEffect(() => {
     const start = rotation.get();
+
     controls.start({
       rotate: start + 360,
       scale: 1,
@@ -41,6 +42,7 @@ const CircularText = ({
 
   const handleHoverStart = () => {
     const start = rotation.get();
+
     if (!onHover) return;
 
     let transitionConfig;
@@ -50,19 +52,31 @@ const CircularText = ({
       case "slowDown":
         transitionConfig = getTransition(spinDuration * 2, start);
         break;
+
       case "speedUp":
         transitionConfig = getTransition(spinDuration / 4, start);
         break;
+
       case "pause":
         transitionConfig = {
-          rotate: { type: "spring", damping: 20, stiffness: 300 },
-          scale: { type: "spring", damping: 20, stiffness: 300 },
+          rotate: {
+            type: "spring",
+            damping: 20,
+            stiffness: 300,
+          },
+          scale: {
+            type: "spring",
+            damping: 20,
+            stiffness: 300,
+          },
         };
         break;
+
       case "goBonkers":
         transitionConfig = getTransition(spinDuration / 20, start);
         scaleVal = 0.8;
         break;
+
       default:
         transitionConfig = getTransition(spinDuration, start);
     }
@@ -76,6 +90,7 @@ const CircularText = ({
 
   const handleHoverEnd = () => {
     const start = rotation.get();
+
     controls.start({
       rotate: start + 360,
       scale: 1,
@@ -86,24 +101,29 @@ const CircularText = ({
   return (
     <div
       className="
-        relative 
-        border border-[var(--border-light)] 
-        bg-[var(--bg-secondary)] 
-        p-1 rounded-full 
-        w-[145px] h-[145px] mx-auto
-      "
+    relative
+    w-[145px] h-[145px]
+    mx-auto
+    p-1
+    rounded-full
+    bg-white
+    border border-gray-200
+  "
     >
       {/* Fixed Center Icon */}
       <div
         className="
-          absolute top-1/2 left-1/2 
-          -translate-x-1/2 -translate-y-1/2
-          text-sm p-6 rounded-full 
-          bg-[var(--accent-primary)]/20 
-          text-[var(--text-main)]
-          z-10 rotate-45 
-          flex items-center justify-center
-        "
+      absolute
+      top-1/2 left-1/2
+      -translate-x-1/2 -translate-y-1/2
+      z-10
+      p-6
+      rounded-full
+      bg-[#159EE9]
+      text-white
+      rotate-45
+      flex items-center justify-center
+    "
       >
         <FaArrowUp />
       </div>
@@ -111,26 +131,34 @@ const CircularText = ({
       {/* Rotating Text */}
       <motion.div
         className={`
-          m-0 rounded-full w-full h-full relative
-          text-[var(--text-main)] 
-          text-center 
-          bg-[var(--bg-main)] 
-          cursor-pointer font-medium origin-center
-          ${className}
-        `}
+      relative
+      w-full h-full
+      m-0
+      rounded-full
+      bg-white
+      text-[#147DCC]
+      text-center
+      cursor-pointer
+      font-medium
+      origin-center
+      ${className}
+    `}
         style={{ rotate: rotation }}
         initial={{ rotate: 0 }}
         animate={controls}
         onMouseEnter={handleHoverStart}
         onMouseLeave={handleHoverEnd}
       >
-        {/* Inner border */}
+        {/* Inner Border */}
         <div
           className="
-            absolute inset-8 rounded-full
-            border border-[var(--border-light)]
-            pointer-events-none
-          "
+        absolute
+        inset-8
+        rounded-full
+        border
+        border-gray-200
+        pointer-events-none
+      "
         />
 
         {letters.map((letter, i) => {
@@ -138,18 +166,29 @@ const CircularText = ({
           const factor = Math.PI / letters.length;
           const x = factor * i;
           const y = factor * i;
-          const transform = `rotateZ(${rotationDeg}deg) translate3d(${x}px, ${y}px, 0)`;
+
+          const transform = `
+        rotateZ(${rotationDeg}deg)
+        translate3d(${x}px, ${y}px, 0)
+      `;
 
           return (
             <span
               key={i}
               className="
-                absolute inline-block inset-0 
-                text-sm 
-                transition-all duration-500 
-                ease-[cubic-bezier(0,0,0,1)]
-              "
-              style={{ transform, WebkitTransform: transform }}
+            absolute
+            inline-block
+            inset-0
+            text-sm
+            font-semibold
+            transition-all
+            duration-500
+            ease-[cubic-bezier(0,0,0,1)]
+          "
+              style={{
+                transform,
+                WebkitTransform: transform,
+              }}
             >
               {letter}
             </span>
