@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Heading";
+  src: url("./assets/fonts/Marcellus.ttf") format("truetype");
+  font-display: swap;
+}
+
+.font-heading {
+  font-family: "Heading", sans-serif;
+}
+
+@font-face {
+  font-family: "Hindi";
+  src: url("./assets/fonts/Ranga.ttf") format("truetype");
+  font-display: swap;
+}
+
+.font-hindi {
+  font-family: "Hindi", sans-serif;
+}
