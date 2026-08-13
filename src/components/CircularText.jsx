@@ -136,7 +136,7 @@ const CircularText = ({
       m-0
       rounded-full
       bg-white
-      text-[#147DCC]
+      text-[#2C2C2C]
       text-center
       cursor-pointer
       font-medium

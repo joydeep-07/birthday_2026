@@ -54,9 +54,9 @@ const Hero = () => {
               {imageLoaded && (
                 <div className="absolute bg-white rounded-full -bottom-3 xs:-bottom-4 sm:-bottom-5 -right-5 xs:-right-9 sm:-right-10 scale-75 xs:scale-90 sm:scale-100">
                   <CircularText
-                    text="LET'S TALK • LET'S TALK • LET'S TALK • "
+                    text="BIRTHDAY • BAYBEE • HAPPIEE • "
                     radius={30}
-                    fontSize={10}
+                    fontSize={5}
                     rotateSpeed={40}
                     direction="clockwise"
                     textColor="#183B56"
