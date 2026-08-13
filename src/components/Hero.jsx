@@ -18,7 +18,7 @@ const Hero = () => {
             viewBox="0 0 500 450"
             xmlns="http://www.w3.org/2000/svg"
             // Increased size slightly to accommodate deeper waves
-            className="w-[520px] sm:w-[650px] md:w-[900px] h-auto opacity-35 fill-[#FFCC4D]"
+            className="w-[520px] sm:w-[650px] md:w-[800px] h-auto opacity-35 fill-[#FFCC4D]"
           >
             {/* Complex path data creating deep, numerous waves */}
             <path
