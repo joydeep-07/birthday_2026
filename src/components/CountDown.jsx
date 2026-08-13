@@ -53,12 +53,12 @@ const CountDown = () => {
   ];
 
   return (
-    <div className="text-left">
+    <div className="text-left ">
       <p className="text-[#147dcc] text-sm font-semibold tracking-[0.25em] uppercase mb-5">
         Counting down to your special day
       </p>
 
-      <div className="flex items-center gap-3 sm:gap-4">
+      <div className="flex items-center md:justify-start justify-center gap-3 sm:gap-4">
         {items.map((item, index) => (
           <React.Fragment key={item.label}>
             <div className="min-w-[55px]">
@@ -83,7 +83,7 @@ const CountDown = () => {
         ))}
       </div>
 
-      <p className="mt-4 text-xs text-gray-400">16 September 2026</p>
+      <p className="mt-4 text-xs md:text-left text-center text-gray-400">16 September 2026</p>
     </div>
   );
 };

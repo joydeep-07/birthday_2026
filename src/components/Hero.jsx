@@ -71,7 +71,9 @@ const Hero = () => {
             <h1 className="text-3xl font-heading xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-tight">
               Happy Birthday, <span className="text-[#009FE3]">Love</span>
               <br />
-              <span className="text-6xl ">My Reason to Smile</span>
+              <span className="text-3xl font-heading xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                My Reason to Smile
+              </span>
             </h1>
 
             <p className="text-[#52758D] text-xs xs:text-base sm:text-sm max-w-xl mx-auto lg:mx-0">
@@ -82,8 +84,7 @@ const Hero = () => {
 
             {/* MESSAGE BUTTON */}
             <div className="flex justify-center mt-5 lg:justify-start">
-
-              <CountDown/>
+              <CountDown />
               {/* <button
                 className="
         relative overflow-hidden
