@@ -5,6 +5,7 @@ import { User } from "lucide-react";
 import CountDown from "./CountDown";
 import Pocket from "./Pocket";
 // import DownloadModal from "./DownloadModal";
+import hug from '../assets/images/hug.jpeg'
 import anywhere from '../assets/gadgets/anywheredoor.png'
 
 const Hero = () => {
@@ -17,6 +18,7 @@ const Hero = () => {
           <div className="absolute hidden md:flex -bottom-52 right-5 sm:right-8 md:-right-12 lg:-right-20 z-20">
             <img
               src={anywhere}
+              loading="lazy"
               alt="Anywhere Door"
               className="w-36 sm:w-28 md:w-36 -scale-x-100 lg:w-76 h-auto"
             />
@@ -32,7 +34,7 @@ const Hero = () => {
               )}
 
               <img
-                src="https://i.pinimg.com/1200x/fd/54/94/fd54946716832100143853afd31e5b0d.jpg"
+                src={hug}
                 alt="Joydeep Paul"
                 loading="lazy"
                 onLoad={() => setImageLoaded(true)}
