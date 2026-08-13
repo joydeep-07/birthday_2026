@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
+import gsap from "gsap";
 
 const CountDown = () => {
   const calculateTimeLeft = () => {
     const targetDate = new Date("September 16, 2026 00:00:00").getTime();
-    const now = new Date().getTime();
-    const difference = targetDate - now;
+    const difference = targetDate - Date.now();
 
     if (difference <= 0) {
       return {
@@ -23,7 +23,7 @@ const CountDown = () => {
     };
   };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -34,10 +34,22 @@ const CountDown = () => {
   }, []);
 
   const items = [
-    { value: timeLeft.days, label: "Days" },
-    { value: timeLeft.hours, label: "Hours" },
-    { value: timeLeft.minutes, label: "Minutes" },
-    { value: timeLeft.seconds, label: "Seconds" },
+    {
+      value: String(timeLeft.days).padStart(2, "0"),
+      label: "Days",
+    },
+    {
+      value: String(timeLeft.hours).padStart(2, "0"),
+      label: "Hours",
+    },
+    {
+      value: String(timeLeft.minutes).padStart(2, "0"),
+      label: "Minutes",
+    },
+    {
+      value: String(timeLeft.seconds).padStart(2, "0"),
+      label: "Seconds",
+    },
   ];
 
   return (
@@ -50,9 +62,14 @@ const CountDown = () => {
         {items.map((item, index) => (
           <React.Fragment key={item.label}>
             <div className="min-w-[55px]">
-              <span className="block text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900">
-                {String(item.value).padStart(2, "0")}
-              </span>
+              <div className="flex text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900">
+                {item.value.split("").map((digit, digitIndex) => (
+                  <DigitColumn
+                    key={`${item.label}-${digitIndex}`}
+                    digit={Number(digit)}
+                  />
+                ))}
+              </div>
 
               <span className="block mt-1 text-[10px] uppercase tracking-widest text-gray-400">
                 {item.label}
@@ -68,6 +85,49 @@ const CountDown = () => {
 
       <p className="mt-4 text-xs text-gray-400">16 September 2026</p>
     </div>
+  );
+};
+
+const DigitColumn = ({ digit }) => {
+  const columnRef = React.useRef(null);
+  const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  useEffect(() => {
+    if (!columnRef.current) return;
+
+    // Animate the strip to the correct Y offset based on the digit index
+    gsap.to(columnRef.current, {
+      y: `-${digit * 10}%`,
+      duration: 0.5,
+      ease: "power2.out",
+      overwrite: "auto",
+    });
+  }, [digit]);
+
+  return (
+    <span
+      className="
+        relative
+        inline-block
+        overflow-hidden
+        h-[1.2em]
+        w-[0.6em]
+      "
+    >
+      <span
+        ref={columnRef}
+        className="absolute top-0 left-0 w-full flex flex-col items-center"
+      >
+        {digits.map((num) => (
+          <span
+            key={num}
+            className="h-[1.2em] flex items-center justify-center w-full"
+          >
+            {num}
+          </span>
+        ))}
+      </span>
+    </span>
   );
 };
 
