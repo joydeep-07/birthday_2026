@@ -27,7 +27,7 @@ const items = [
 ];
 
   return (
-    <section className="min-h-screen w-full overflow-hidden bg-[#EAF7FF] px-4 py-8 sm:px-6 sm:py-10 md:px-12 md:py-12">
+    <section className="md:min-h-screen w-full overflow-hidden bg-[#EAF7FF] px-4 py-8 sm:px-6 sm:py-10 md:px-12 md:py-12">
       {/* Header */}
      
       <div className="mx-auto flex w-full max-w-8xl items-center gap-2 sm:gap-4 md:gap-6">

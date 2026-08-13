@@ -12,7 +12,7 @@ const Hero = () => {
 
   return (
     <>
-      <section className="relative overflow-hidden flex justify-center min-h-[calc(100vh-4rem)] items-start py-5 bg-[#EAF7FF] text-[#183B56]">
+      <section className="relative overflow-hidden flex justify-center md:min-h-[calc(100vh-4rem)] items-start py-5 bg-[#EAF7FF] text-[#183B56]">
         <div className="relative z-10 max-w-7xl w-full flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-20 px-4 sm:px-6 md:px-8 lg:px-12">
           <div className="absolute hidden md:flex -bottom-52 right-5 sm:right-8 md:-right-12 lg:-right-20 z-20">
             <img
