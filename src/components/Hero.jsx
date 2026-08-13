@@ -69,7 +69,30 @@ Z"
 
               {/* CIRCULAR TEXT */}
               {imageLoaded && (
-                <div className="absolute bg-white rounded-full -bottom-3 xs:-bottom-4 sm:-bottom-5 -right-5 xs:-right-9 sm:-right-10 scale-75 xs:scale-90 sm:scale-100">
+                <div
+                  className="
+    absolute
+    bg-white
+    rounded-full
+
+    -bottom-5
+    xs:-bottom-6
+    sm:-bottom-7
+    md:-bottom-4
+    lg:-bottom-2
+    xl:bottom-0
+
+    -right-5
+    xs:-right-7
+    sm:-right-8
+    md:-right-9
+    lg:-right-10
+
+    scale-75
+    xs:scale-90
+    sm:scale-100
+  "
+                >
                   <CircularText
                     text="BIRTHDAY • BAYBEE • HAPPIEE • "
                     radius={30}
