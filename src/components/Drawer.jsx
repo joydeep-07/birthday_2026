@@ -2,7 +2,7 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoClose } from "react-icons/io5";
 
-import doodle from "../assets/images/doodle.png";
+import doodle from "../assets/images/doodle1.png";
 
 import img1 from "../assets/favourites/biryani.png";
 import img2 from "../assets/favourites/momos.png";
@@ -210,10 +210,10 @@ const Drawer = ({ isOpen, onClose }) => {
                 }}
                 className="
                   h-auto
-                  w-[85%]
-                  max-w-[420px]
+                  w-[65%]
+                  
                   object-contain
-                  sm:w-[75%]
+                 
                 "
               />
 
