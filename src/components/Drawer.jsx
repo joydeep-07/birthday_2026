@@ -196,6 +196,7 @@ const Drawer = ({ isOpen, onClose }) => {
               <motion.img
                 src={doodle}
                 alt="Doraemon birthday doodle"
+                loading="lazy"
                 initial={{
                   opacity: 0,
                   scale: 0.9,
@@ -211,10 +212,7 @@ const Drawer = ({ isOpen, onClose }) => {
                 className="
                   h-auto
                   w-[65%]
-                  
-                  object-contain
-                 
-                "
+                   object-contain"
               />
 
               {/* Text */}
