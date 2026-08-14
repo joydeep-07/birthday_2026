@@ -33,7 +33,6 @@ const Hero = () => {
         justify-center
         items-start
         py-5
-        bg-[#EAF7FF]
         text-[#183B56]
       "
     >
