@@ -7,25 +7,43 @@ import puja from "../assets/images/puja.jpeg";
 import theque from "../assets/images/theque.jpeg";
 
 const TimeMacehine = () => {
+// const items = [
+//   {
+//     image: astami,
+//     caption: "Some moments are worth travelling back to ❤️",
+//   },
+//   {
+//     image: puja,
+//     caption: " The memories that started it all ✨",
+//   },
+//   {
+//     image: theque,
+//     caption: "Places change, but these memories stay",
+//   },
+//   {
+//     image: food,
+//     caption: "Good food, good days, and my favourite person",
+//   },
+// ];
+
+
 const items = [
   {
-    image: astami,
-    caption: "Some moments are worth travelling back to ❤️",
+    image:
+      "https://images.unsplash.com/photo-1782977389500-dd7adad33ebe?q=80&w=1600&auto=format&fit=crop",
+    caption: "One",
   },
   {
-    image: puja,
-    caption: " The memories that started it all ✨",
+    image:
+      "https://images.unsplash.com/photo-1781499455083-6ccc3beb20cd?q=80&w=1600&auto=format&fit=crop",
+    caption: "Two",
   },
   {
-    image: theque,
-    caption: "Places change, but these memories stay",
-  },
-  {
-    image: food,
-    caption: "Good food, good days, and my favourite person",
+    image:
+      "https://images.unsplash.com/photo-1776394254711-4a0d7345269a?q=80&w=1600&auto=format&fit=crop",
+    caption: "Three",
   },
 ];
-
   return (
     <section className="md:min-h-screen w-full overflow-hidden bg-[#EAF7FF] px-4 py-8 sm:px-6 sm:py-10 md:px-12 md:py-12">
       {/* Header */}
