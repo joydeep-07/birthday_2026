@@ -6,6 +6,7 @@ import TimeMacehine from './components/TimeMacehine'
 import Memories from './components/Memories'
 import LenisScroll from './utils/Lenis'
 import Footer from './layouts/Footer'
+import Sunflower from './components/Sunflower'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <div className="bg-[#EAF7FF] ">
         <Navbar />
         <Hero />
+        <Sunflower/>
         <div className="hidden md:flex">
           <Memories />
         </div>
