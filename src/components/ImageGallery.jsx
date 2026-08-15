@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 const ImageGallery = ({
   images = [],
   className = "",
-  galleryHeight = "250vh", // Increased height to stretch the scroll duration
+  galleryHeight = "250vh",
 }) => {
   const sectionRef = useRef(null);
   const galleryRef = useRef(null);
@@ -22,7 +22,6 @@ const ImageGallery = ({
       const columns = gsap.utils.toArray(".image-gallery-column");
 
       const initialPositions = [-45, -95, -45, -75];
-      // Reduced movement values to make the columns scroll slower
       const movements = [120, 200, 75, 180];
 
       columns.forEach((column, index) => {
@@ -37,7 +36,7 @@ const ImageGallery = ({
             trigger: gallery,
             start: "top bottom",
             end: "bottom top",
-            scrub: 2, // Increased scrub lag slightly for a smoother, weightier feel
+            scrub: 2,
             invalidateOnRefresh: true,
           },
         });
@@ -99,7 +98,7 @@ const ImageGallery = ({
               relative
               flex
               h-full
-              w-[330px]
+              w-[185px] md:w-[330px]
               shrink-0
               flex-col
               gap-[2vw]
@@ -110,7 +109,7 @@ const ImageGallery = ({
                 key={`${columnIndex}-${imageIndex}`}
                 className="
                   relative
-                  w-[300px]
+                  w-[165px] md:w-[300px]
                   shrink-0
                   border
                   border-[#555454]
@@ -144,7 +143,7 @@ const ImageGallery = ({
       <div className="relative flex h-[200px] items-center justify-center">
         <div className="absolute left-1/2 top-[10%] flex -translate-x-1/2 flex-col items-center gap-6 text-center">
           <span className="max-w-[12ch] text-xs uppercase leading-tight opacity-40">
-            scroll up to see
+            scroll down to see
           </span>
 
           <span className="h-16 w-px bg-gradient-to-b from-transparent via-black/30 to-black" />

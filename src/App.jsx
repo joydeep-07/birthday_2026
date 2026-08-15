@@ -15,9 +15,11 @@ const App = () => {
       <div className="bg-[#EAF7FF] ">
         <Navbar />
         <Hero />
-        <Memories />
+        <div className="hidden md:flex">
+          <Memories />
+        </div>
         <TimeMacehine />
-        <Footer/>
+        <Footer />
         {/* <Pocket/> */}
       </div>
     </>
