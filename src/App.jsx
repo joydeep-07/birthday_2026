@@ -5,6 +5,7 @@ import Pocket from './components/Pocket'
 import TimeMacehine from './components/TimeMacehine'
 import Memories from './components/Memories'
 import LenisScroll from './utils/Lenis'
+import Footer from './layouts/Footer'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Hero />
         <Memories />
         <TimeMacehine />
+        <Footer/>
         {/* <Pocket/> */}
       </div>
     </>
