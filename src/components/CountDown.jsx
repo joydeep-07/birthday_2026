@@ -1,8 +1,33 @@
 import React, { useEffect, useState } from "react";
-import letter from "../assets/gadgets/tom.png";
+import tom from "../assets/gadgets/tom.png";
+import tom2 from "../assets/gadgets/tom2.png";
+import tom3 from "../assets/gadgets/tom3.png";
+import tom4 from "../assets/gadgets/tom4.png";
+import tom5 from "../assets/gadgets/tom5.png";
+import tom6 from "../assets/gadgets/tom6.png";
+import tom7 from "../assets/gadgets/tom7.png";
 import gsap from "gsap";
 
 const CountDown = ({ targetDate }) => {
+  const tomImages = [tom, tom2, tom3, tom4, tom5, tom6, tom7];
+
+  const [currentTom, setCurrentTom] = useState(() => {
+    const previousIndex = Number(sessionStorage.getItem("tom-image-index"));
+
+    let newIndex = Math.floor(Math.random() * tomImages.length);
+
+    // Prevent the same image from appearing on consecutive reloads
+    if (!Number.isNaN(previousIndex) && tomImages.length > 1) {
+      while (newIndex === previousIndex) {
+        newIndex = Math.floor(Math.random() * tomImages.length);
+      }
+    }
+
+    sessionStorage.setItem("tom-image-index", newIndex);
+
+    return tomImages[newIndex];
+  });
+
   const calculateTimeLeft = () => {
     const target = new Date(targetDate).getTime();
     const difference = target - Date.now();
@@ -55,14 +80,13 @@ const CountDown = ({ targetDate }) => {
 
   return (
     <main className="flex h-[100dvh] w-full flex-col overflow-hidden bg-[#EAF7FF] px-5 pt-4 sm:px-8 sm:pt-6 md:px-12">
-      {/* Main content */}
       <div className="flex min-h-0 flex-1 items-center">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-2 md:flex-row md:items-center md:justify-between md:gap-16">
           {/* Tom */}
           <div className="flex w-full justify-center md:w-1/2 md:justify-start">
             <img
-              src={letter}
-              alt=""
+              src={currentTom}
+              alt="Tom"
               className="
                 h-auto
                 w-[210px]
@@ -88,7 +112,6 @@ const CountDown = ({ targetDate }) => {
               Bina kisi bakchodi ke, in
             </p>
 
-            {/* Timer */}
             <div className="mt-4 flex items-start justify-center gap-1 sm:mt-7 sm:gap-3">
               {items.map((item, index) => (
                 <React.Fragment key={item.label}>
@@ -116,7 +139,6 @@ const CountDown = ({ targetDate }) => {
               ))}
             </div>
 
-            {/* Date */}
             <div className="mt-4 flex items-center gap-2 sm:mt-7 sm:gap-3">
               <span className="h-px w-6 bg-[#183B56]/15 sm:w-8" />
 
@@ -134,8 +156,7 @@ const CountDown = ({ targetDate }) => {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="shrink-0 border-t border-[#183B56]/10 py-4 md:py-6 text-center">
+      <footer className="shrink-0 border-t border-[#183B56]/10 py-4 text-center md:py-6">
         <p className="text-[8px] font-medium uppercase tracking-[0.18em] text-[#183B56]/70 sm:text-xs sm:tracking-[0.2em]">
           © 2026 Joydeep Paul · All rights reserved
         </p>
