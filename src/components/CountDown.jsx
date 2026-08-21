@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import letter from "../assets/gadgets/tom.png";
 import gsap from "gsap";
 
-const CountDown = () => {
+const CountDown = ({ targetDate }) => {
   const calculateTimeLeft = () => {
-    const targetDate = new Date("September 16, 2026 00:00:00").getTime();
-    const difference = targetDate - Date.now();
+    const target = new Date(targetDate).getTime();
+    const difference = target - Date.now();
 
     if (difference <= 0) {
       return {
@@ -31,7 +32,7 @@ const CountDown = () => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [targetDate]);
 
   const items = [
     {
@@ -53,38 +54,93 @@ const CountDown = () => {
   ];
 
   return (
-    <div className="text-left ">
-      <p className="text-[#147dcc] text-sm font-semibold tracking-[0.25em] uppercase mb-5">
-        Counting down to your special day
-      </p>
+    <main className="flex h-[100dvh] w-full flex-col overflow-hidden bg-[#EAF7FF] px-5 pt-4 sm:px-8 sm:pt-6 md:px-12">
+      {/* Main content */}
+      <div className="flex min-h-0 flex-1 items-center">
+        <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-2 md:flex-row md:items-center md:justify-between md:gap-16">
+          {/* Tom */}
+          <div className="flex w-full justify-center md:w-1/2 md:justify-start">
+            <img
+              src={letter}
+              alt=""
+              className="
+                h-auto
+                w-[210px]
+                object-contain
+                sm:w-[270px]
+                md:w-80
+                lg:w-120
+              "
+            />
+          </div>
 
-      <div className="flex items-center md:justify-start justify-center gap-3 sm:gap-4">
-        {items.map((item, index) => (
-          <React.Fragment key={item.label}>
-            <div className="min-w-[55px]">
-              <div className="flex text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900">
-                {item.value.split("").map((digit, digitIndex) => (
-                  <DigitColumn
-                    key={`${item.label}-${digitIndex}`}
-                    digit={Number(digit)}
-                  />
-                ))}
-              </div>
+          {/* Countdown */}
+          <div className="flex w-full flex-col items-center text-center md:w-1/2 md:items-start md:text-left">
+            <p className="mb-1 text-[8px] font-semibold uppercase tracking-[0.3em] text-[#147dcc] sm:mb-3 sm:text-xs">
+              Kisika to birthday aaraha hai
+            </p>
 
-              <span className="block mt-1 text-[10px] uppercase tracking-widest text-gray-400">
-                {item.label}
-              </span>
+            <h1 className="font-heading text-2xl font-semibold tracking-tight text-[#183B56] sm:text-4xl lg:text-5xl">
+              Chaliye suru karte hai
+            </h1>
+
+            <p className="mt-1 text-xs leading-relaxed text-[#183B56]/80 sm:mt-2 sm:text-sm">
+              Bina kisi bakchodi ke, in
+            </p>
+
+            {/* Timer */}
+            <div className="mt-4 flex items-start justify-center gap-1 sm:mt-7 sm:gap-3">
+              {items.map((item, index) => (
+                <React.Fragment key={item.label}>
+                  <div className="flex min-w-[48px] flex-col items-center sm:min-w-[75px] md:items-start">
+                    <div className="flex h-[38px] items-center text-2xl font-semibold tracking-tight text-[#183B56] sm:h-[60px] sm:text-5xl">
+                      {item.value.split("").map((digit, digitIndex) => (
+                        <DigitColumn
+                          key={`${item.label}-${digitIndex}`}
+                          digit={Number(digit)}
+                        />
+                      ))}
+                    </div>
+
+                    <span className="mt-1 text-[7px] font-medium uppercase tracking-[0.15em] text-[#183B56]/40 sm:mt-2 sm:text-[10px] sm:tracking-[0.2em]">
+                      {item.label}
+                    </span>
+                  </div>
+
+                  {index < items.length - 1 && (
+                    <span className="mt-1 text-lg font-light text-[#147dcc]/40 sm:mt-3 sm:text-3xl">
+                      :
+                    </span>
+                  )}
+                </React.Fragment>
+              ))}
             </div>
 
-            {index < items.length - 1 && (
-              <span className="self-start mt-1 text-xl text-gray-300">:</span>
-            )}
-          </React.Fragment>
-        ))}
+            {/* Date */}
+            <div className="mt-4 flex items-center gap-2 sm:mt-7 sm:gap-3">
+              <span className="h-px w-6 bg-[#183B56]/15 sm:w-8" />
+
+              <p className="text-[8px] font-medium uppercase tracking-[0.15em] text-[#183B56]/45 sm:text-[10px] sm:tracking-[0.2em]">
+                {new Date(targetDate).toLocaleDateString("en-GB", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}
+              </p>
+
+              <span className="h-px w-6 bg-[#183B56]/15 sm:w-8" />
+            </div>
+          </div>
+        </div>
       </div>
 
-      <p className="mt-4 text-xs md:text-left text-center text-gray-400">16 September 2026</p>
-    </div>
+      {/* Footer */}
+      <footer className="shrink-0 border-t border-[#183B56]/10 py-4 md:py-6 text-center">
+        <p className="text-[8px] font-medium uppercase tracking-[0.18em] text-[#183B56]/70 sm:text-xs sm:tracking-[0.2em]">
+          © 2026 Joydeep Paul · All rights reserved
+        </p>
+      </footer>
+    </main>
   );
 };
 
@@ -95,33 +151,24 @@ const DigitColumn = ({ digit }) => {
   useEffect(() => {
     if (!columnRef.current) return;
 
-    // Animate the strip to the correct Y offset based on the digit index
     gsap.to(columnRef.current, {
       y: `-${digit * 10}%`,
-      duration: 0.5,
+      duration: 0.45,
       ease: "power2.out",
       overwrite: "auto",
     });
   }, [digit]);
 
   return (
-    <span
-      className="
-        relative
-        inline-block
-        overflow-hidden
-        h-[1.2em]
-        w-[0.6em]
-      "
-    >
+    <span className="relative inline-block h-[1.2em] w-[0.6em] overflow-hidden">
       <span
         ref={columnRef}
-        className="absolute top-0 left-0 w-full flex flex-col items-center"
+        className="absolute left-0 top-0 flex w-full flex-col items-center"
       >
         {digits.map((num) => (
           <span
             key={num}
-            className="h-[1.2em] flex items-center justify-center w-full"
+            className="flex h-[1.2em] w-full items-center justify-center"
           >
             {num}
           </span>
