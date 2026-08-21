@@ -10,7 +10,8 @@ import Sunflower from "./components/Sunflower";
 import CountDown from "./components/CountDown";
 
 const App = () => {
-  const countDownDate = "August 21, 2026 13:30:00";
+  // const countDownDate = "August 21, 2026 13:22:00";
+  const countDownDate = "September 16, 2026 00:00:00";
   const targetTime = new Date(countDownDate).getTime();
 
   const [isBirthday, setIsBirthday] = useState(Date.now() >= targetTime);
@@ -73,7 +74,7 @@ useEffect(() => {
         <Navbar />
         <Hero />
         <Sunflower />
-        <TimeMacehine />
+        {/* <TimeMacehine /> */}
         <Footer />
       </div>
     </>
