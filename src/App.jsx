@@ -8,6 +8,7 @@ import LenisScroll from "./utils/Lenis";
 import Footer from "./layouts/Footer";
 import Sunflower from "./components/Sunflower";
 import CountDown from "./components/CountDown";
+import Cat from "./components/Cat";
 
 const App = () => {
   // const countDownDate = "August 21, 2026 13:22:00";
@@ -73,6 +74,7 @@ useEffect(() => {
       <div className="bg-[#EAF7FF]">
         <Navbar />
         <Hero />
+        <Cat/>
         <Sunflower />
         {/* <TimeMacehine /> */}
         <Footer />

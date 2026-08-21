@@ -4,7 +4,7 @@ import sunshine from "../assets/gadgets/sunshine.png";
 const Sunflower = () => {
   return (
     <>
-      <section className="w-full px-3 py-10 md:px-12 md:py-24">
+      <section className="w-full px-3 py-10 md:px-12 md:py-0">
         <div className="flex w-full flex-col items-center gap-10 border border-[#183B56]/10 bg-white/50 px-3 py-8 md:flex-row md:items-start md:gap-16 md:px-12 md:py-14">
           {/* Image */}
           <div className="flex w-full shrink-0 justify-center md:w-[25%]">
