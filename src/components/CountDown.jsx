@@ -86,6 +86,7 @@ const CountDown = ({ targetDate }) => {
           <div className="flex w-full justify-center md:w-1/2 md:justify-start">
             <img
               src={currentTom}
+              loading="lazy"
               alt="Tom"
               className="
                 h-auto
