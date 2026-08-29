@@ -9,6 +9,7 @@ import Footer from "./layouts/Footer";
 import Sunflower from "./components/Sunflower";
 import CountDown from "./components/CountDown";
 import Cat from "./components/Cat";
+import Calendar from "./components/Calendar";
 
 const App = () => {
   // const countDownDate = "August 21, 2026 13:22:00";
@@ -75,8 +76,9 @@ useEffect(() => {
         <Navbar />
         <Hero />
         <Cat/>
+        <Calendar/>
         <Sunflower />
-        {/* <TimeMacehine /> */}
+        <TimeMacehine />
         <Footer />
       </div>
     </>
