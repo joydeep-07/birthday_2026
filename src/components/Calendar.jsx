@@ -12,53 +12,55 @@ import theque from "../assets/cal/theque.jpg";
 // Sample data array containing events
 const timelineData = [
   {
-    id: 1,
-    caption: "Astami",
-    image: astami,
-    date: "October 20th, 2023",
-  },
-  {
     id: 2,
     caption: "College Days",
     image: college,
-    date: "November 12th, 2023",
-  },
-  {
-    id: 3,
-    caption: "Icecream Date",
-    image: icecream,
-    date: "December 5th, 2023",
-  },
-  {
-    id: 4,
-    caption: "Navami",
-    image: navami,
-    date: "October 23rd, 2023",
+    date: "January 28th, 2025",
   },
   {
     id: 5,
     caption: "Swaraswati Puja",
     image: swaraswatiPuja,
-    date: "February 14th, 2024",
-  },
-  {
-    id: 6,
-    caption: "Special Moment",
-    image: chummi,
-    date: "March 1st, 2024",
+    date: "February 2nd, 2025",
   },
   {
     id: 7,
     caption: "Theque",
     image: theque,
-    date: "April 10th, 2024",
+    date: "March 12th, 2025",
   },
-//   {
-//     id: 8,
-//     caption: "Swaraswati Puja Memory",
-//     image: swaraswatiPuja1,
-//     date: "February 14th, 2024",
-//   },
+  {
+    id: 3,
+    caption: "Icecream Date",
+    image: icecream,
+    date: "March , 2025",
+  },
+  {
+    id: 1,
+    caption: "Astami",
+    image: astami,
+    date: "September 30th, 2025",
+  },
+  {
+    id: 6,
+    caption: "Special Moment",
+    image: chummi,
+    date: "September 30th, 2025",
+  },
+
+  {
+    id: 4,
+    caption: "Navami",
+    image: navami,
+    date: "October 1st, 2025",
+  },
+
+  //   {
+  //     id: 8,
+  //     caption: "Swaraswati Puja Memory",
+  //     image: swaraswatiPuja1,
+  //     date: "February 14th, 2024",
+  //   },
 ];
 
 const Calendar = () => {
