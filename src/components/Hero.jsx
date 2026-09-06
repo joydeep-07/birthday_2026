@@ -26,13 +26,16 @@ const Hero = () => {
 
           <div className="max-w-4xl text-sm leading-7 text-[#183B56]/75 md:text-[15px]">
             <p className="text-justify leading-7 text-[#183B56]">
-              Dekho, tumi nisshondehe khub sundor, kintu tumi jevabe shopno
-              dekho, seta tar thekeo besi sundor. Ei bodle jawa prithibite tumi
-              jevabe amader somporko take gurutto dao, setao bhishon sundor. Ar
-              eto kichur poreo tumi jei vabe amar pase thako, seta amar kache
-              sotti khub sundor. Jokhon ami nijeke niye doubt korte shuru kori,
-              jokhon nijer oporei amar bissas thake na, tokhono tumi jevabe amar
-              opor bishash rakho, amr paase darao, seta khub sundor.
+              Heppiii Birthday tuuu youuu heppi birthday tuuu youuuu heppi
+              birthday tuuu may baybeeee heppi birtthday tuuu youuuuuuuuu.
+              💋💋💋💋💋 You are sexyyyy DP wali sundor badie thats sobai knows,
+              but tumi jevabe sopno dekho, seta tar thekeo besi sundor. Ei bodle
+              jawa duniya tumi jevabe amader realtion take gurutto dao, seta aro
+              sundor. Ar eto kichur poreo tumi je vabe amar pase thako, seta
+              amar kache sotti khub sundor. Jokhon ami nijeke niye doubt korte
+              shuru kori, jokhon nijer oporei amar bissas thake na, tokhono tumi
+              jevabe amar opor bishash rakho, amr paase darao, seta aro besi
+              sundor.
               <br />
               Dekho, tumi jano je ami amar feelings express korte khub ekta
               bhalo noi. Hoito protibar ami amar moner kotha gulo thik vabe

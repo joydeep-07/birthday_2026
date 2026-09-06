@@ -29,7 +29,7 @@ const Sunflower = () => {
             </div>
             <p className=" text-sm md:text-xl leading-[1.8] text-[#183B56] text-justify md:leading-[1.6]">
               They say a sunflower always turns towards the sun because that’s
-              where it finds light, warmth, and strength. Surjo tokhon thakena,
+              where it finds light, warmth, and strength. Surjo jokhon thakena,
               kintu seta wait kore je se abar thik fire asbe. Temni, you are my
               sunshine. No matter how busy life gets, ar ami jotoi vul kori, at
               the end of the day, ami tomar kachei fire asi. And you know what?
