@@ -35,7 +35,7 @@ const Hero = () => {
               amar kache sotti khub sundor. Jokhon ami nijeke niye doubt korte
               shuru kori, jokhon nijer oporei amar bissas thake na, tokhono tumi
               jevabe amar opor bishash rakho, amr paase darao, seta aro besi
-              sundor.
+              sundor. ❤️
               <br />
               Dekho, tumi jano je ami amar feelings express korte khub ekta
               bhalo noi. Hoito protibar ami amar moner kotha gulo thik vabe
@@ -44,11 +44,11 @@ const Hero = () => {
               <br />
               Thank you for being with me, for believing in me & for motivating
               me. Happy Birthday,love. Ei vabei khusi thako, bakchodi kro, ar
-              amr life er sob theke sundor ongso hye thako ...
+              amr life er sob theke sundor part hye thako ... ❤️
             </p>
 
             <div className="mt-7 flex items-center gap-3">
-              <p className="text-sm text-[#183B56]/60">I love You</p>
+              <p className="text-sm text-red-500">I love You</p>
               <Heart size={14} color="red" />
             </div>
 
