@@ -10,6 +10,7 @@ import Sunflower from "./components/Sunflower";
 import CountDown from "./components/CountDown";
 import Cat from "./components/Cat";
 import Calendar from "./components/Calendar";
+import Blur from "./components/Blur";
 
 const App = () => {
   // const countDownDate = "August 21, 2026 13:22:00";
@@ -73,6 +74,7 @@ useEffect(() => {
       <LenisScroll />
 
       <div className="bg-[#EAF7FF]">
+        {/* <Blur/> */}
         <Navbar />
         <Hero />
         <Cat/>
