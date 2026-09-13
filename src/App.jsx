@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import confetti from "canvas-confetti";
 
 import Navbar from "./layouts/Navbar";
-import Hero from "./components/Hero";
-import TimeMacehine from "./components/TimeMacehine";
-import LenisScroll from "./utils/Lenis";
 import Footer from "./layouts/Footer";
-import Sunflower from "./components/Sunflower";
+import LenisScroll from "./utils/Lenis";
 import CountDown from "./components/CountDown";
-import Cat from "./components/Cat";
-import Calendar from "./components/Calendar";
-import Blur from "./components/Blur";
+
+import Home from "./pages/Home";
+import BucketList from "./pages/BucketList";
+import Timeline from "./pages/Timeline";
 
 const App = () => {
   // const countDownDate = "August 21, 2026 13:22:00";
   const countDownDate = "September 16, 2026 00:00:00";
+
   const targetTime = new Date(countDownDate).getTime();
 
   const [isBirthday, setIsBirthday] = useState(Date.now() >= targetTime);
@@ -31,33 +31,33 @@ const App = () => {
   }, [targetTime]);
 
   // Confetti when countdown ends
-useEffect(() => {
-  if (!isBirthday) return;
+  useEffect(() => {
+    if (!isBirthday) return;
 
-  const duration = 5 * 1000;
-  const end = Date.now() + duration;
+    const duration = 5 * 1000;
+    const end = Date.now() + duration;
 
-  const frame = () => {
-    confetti({
-      particleCount: 3,
-      angle: 90,
-      spread: 100,
-      startVelocity: 15,
-      gravity: 0.8,
-      ticks: 300,
-      origin: {
-        x: Math.random(),
-        y: 0,
-      },
-    });
+    const frame = () => {
+      confetti({
+        particleCount: 3,
+        angle: 90,
+        spread: 100,
+        startVelocity: 15,
+        gravity: 0.8,
+        ticks: 300,
+        origin: {
+          x: Math.random(),
+          y: 0,
+        },
+      });
 
-    if (Date.now() < end) {
-      requestAnimationFrame(frame);
-    }
-  };
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      }
+    };
 
-  frame();
-}, [isBirthday]);
+    frame();
+  }, [isBirthday]);
 
   // Countdown screen
   if (!isBirthday) {
@@ -70,20 +70,19 @@ useEffect(() => {
 
   // Birthday website
   return (
-    <>
+    <BrowserRouter>
       <LenisScroll />
 
-      <div className="bg-[#EAF7FF]">
-        {/* <Blur/> */}
-        <Navbar />
-        <Hero />
-        <Cat/>
-        <Calendar/>
-        <Sunflower />
-        <TimeMacehine />
-        <Footer />
-      </div>
-    </>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/bucket-list" element={<BucketList />} />
+        <Route path="/timeline" element={<Timeline />} />
+      </Routes>
+
+      <Footer />
+    </BrowserRouter>
   );
 };
 

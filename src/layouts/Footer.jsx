@@ -4,7 +4,7 @@ import { RiHeartFill } from "react-icons/ri";
 
 const Footer = () => {
   return (
-    <div className="px-4 py-5 md:px-12">
+    <div className="px-4 py-5 bg-[#EAF7FF] md:px-12">
       <div
         className="
           container

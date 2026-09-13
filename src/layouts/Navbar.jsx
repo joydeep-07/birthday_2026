@@ -1,5 +1,6 @@
 import React, { useState, useRef, useLayoutEffect } from "react";
 import { RiMenu3Fill } from "react-icons/ri";
+import { NavLink } from "react-router-dom";
 import gsap from "gsap";
 import Drawer from "../components/Drawer";
 
@@ -13,25 +14,19 @@ const Navbar = () => {
     let ctx = gsap.context(() => {
       const logo = logoRef.current;
 
-      // Reset any transforms to ensure accurate DOM measurements
       gsap.set(logo, { clearProps: "all" });
 
-      // Measure the logo's natural position on the top-left
       const rect = logo.getBoundingClientRect();
 
-      // Fallback width/height in case the image hasn't fully loaded on first paint
       const logoWidth = rect.width || 120;
       const logoHeight = rect.height || 36;
 
-      // Calculate the center of the viewport
       const centerX = window.innerWidth / 2;
       const centerY = window.innerHeight / 2;
 
-      // Calculate exactly how many pixels to move the logo to perfectly center it
       const xOffset = centerX - (rect.left + logoWidth / 2);
       const yOffset = centerY - (rect.top + logoHeight / 2);
 
-      // 1. Initial State: Full screen background, massive centered logo, hidden menu
       gsap.set(containerRef.current, {
         height: "100vh",
         backgroundColor: "#EAF7FF",
@@ -40,14 +35,13 @@ const Navbar = () => {
       gsap.set(logo, {
         x: xOffset,
         y: yOffset,
-        scale: 6, // Very big size
+        scale: 6,
         transformOrigin: "center center",
       });
 
       gsap.set(menuRef.current, { autoAlpha: 0 });
 
-      // 2. Animation Timeline
-      const tl = gsap.timeline({ delay: 0.3 }); // Small pause so the user sees the big logo
+      const tl = gsap.timeline({ delay: 0.3 });
 
       tl.to(
         logo,
@@ -63,7 +57,7 @@ const Navbar = () => {
         .to(
           containerRef.current,
           {
-            height: "4rem", // Shrinks back to standard h-16 (64px)
+            height: "4rem",
             duration: 1.2,
             ease: "power3.inOut",
           },
@@ -72,7 +66,7 @@ const Navbar = () => {
         .to(
           menuRef.current,
           {
-            autoAlpha: 1, // Fades the menu button back in
+            autoAlpha: 1,
             duration: 0.4,
             ease: "power2.out",
           },
@@ -85,20 +79,63 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Wrapper ref to animate background height without breaking flex layouts */}
       <div
         ref={containerRef}
-        className="w-full bg-[#EAF7FF] overflow-hidden relative z-50"
+        className="relative z-50 w-full overflow-hidden bg-[#EAF7FF]"
       >
         <nav className="flex h-16 w-full items-center justify-between px-5 sm:px-8 lg:px-12">
           {/* Logo */}
           <div className="flex items-center">
-            <img
-              ref={logoRef}
-              src="./logo.png"
-              alt="Doraemon"
-              className="h-9 w-auto object-contain sm:h-10"
-            />
+            <NavLink to="/">
+              <img
+                ref={logoRef}
+                src="./logo.png"
+                alt="Doraemon"
+                className="h-9 w-auto object-contain sm:h-10"
+              />
+            </NavLink>
+          </div>
+
+          {/* Navigation Links */}
+          <div className="hidden items-center gap-8 md:flex">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `text-sm font-medium transition-colors duration-300 ${
+                  isActive
+                    ? "text-[#147dcc]"
+                    : "text-[#5d7180] hover:text-[#147dcc]"
+                }`
+              }
+            >
+              Home
+            </NavLink>
+
+            <NavLink
+              to="/timeline"
+              className={({ isActive }) =>
+                `text-sm font-medium transition-colors duration-300 ${
+                  isActive
+                    ? "text-[#147dcc]"
+                    : "text-[#5d7180] hover:text-[#147dcc]"
+                }`
+              }
+            >
+              Timeline
+            </NavLink>
+
+            <NavLink
+              to="/bucket-list"
+              className={({ isActive }) =>
+                `text-sm font-medium transition-colors duration-300 ${
+                  isActive
+                    ? "text-[#147dcc]"
+                    : "text-[#5d7180] hover:text-[#147dcc]"
+                }`
+              }
+            >
+              Bucket List
+            </NavLink>
           </div>
 
           {/* Menu */}
@@ -114,9 +151,10 @@ const Navbar = () => {
               rounded-full
               text-[#147dcc]
               transition-all duration-300
-              hover:bg-[#e8f7ff]
               hover:scale-105
+              hover:bg-[#e8f7ff]
               active:scale-95
+              md:hidden
             "
           >
             <RiMenu3Fill
