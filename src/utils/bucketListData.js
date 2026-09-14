@@ -15,49 +15,7 @@ import {
   Wine,
 } from "lucide-react";
 
-export const destinationTabs = [
-  "Popular",
-  "Paris",
-  "Japan",
-  "Goa",
-  "Clubbing",
-  "Drinks",
-  "Rainy Dates",
-  "More",
-];
-
 export const tabContentMap = {
-  Popular: [
-    {
-      title: "Paris, Just Us Two",
-      location: "Paris, France",
-      image:
-        "https://i.pinimg.com/1200x/a2/82/18/a28218d31aab2ac77437b03aa35f2651.jpg",
-      icon: Plane,
-    },
-    {
-      title: "Japan Adventure",
-      location: "Tokyo, Japan",
-      image:
-        "https://i.pinimg.com/736x/b0/27/0d/b0270d97b0a09136bf7e844190863d22.jpg",
-      icon: Compass,
-    },
-    {
-      title: "Goa Beach Escape",
-      location: "Goa, India",
-      image:
-        "https://i.pinimg.com/736x/ff/70/20/ff702001ec5f13fdfa1b14ad97fa1344.jpg",
-      icon: MapPin,
-    },
-    {
-      title: "Getting Drunk Together",
-      location: "Somewhere with music",
-      image:
-        "https://i.pinimg.com/736x/de/2c/82/de2c82fca4203526da188f954ffbdad9.jpg",
-      icon: Wine,
-    },
-  ],
-
   Paris: [
     {
       title: "Eiffel Tower Sparkle at Night",
@@ -89,64 +47,64 @@ export const tabContentMap = {
     },
   ],
 
-  Japan: [
+  London: [
     {
-      title: "Cherry Blossoms in Full Bloom",
-      location: "Tokyo, Japan",
+      title: "Watch a Cricket Match at Lord's",
+      location: "Virat nhi hai to kya hua, Gill ko dekhenge",
       image:
-        "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=600&q=85",
+        "https://i.pinimg.com/1200x/0b/83/50/0b8350bf16eee190ddba9da7e85c7a13.jpg",
       icon: Compass,
     },
     {
-      title: "Late Night Ramen Run",
-      location: "Shinjuku Alleyways",
+      title: "Christmas in London",
+      location: "Apki iccha jo hai",
       image:
-        "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=85",
-      icon: Coffee,
+        "https://i.pinimg.com/736x/44/3f/e7/443fe7aed5660dad55bbe8c85589d3e8.jpg",
+      icon: Star,
     },
     {
-      title: "Explore Neon City Streets",
-      location: "Akihabara & Shibuya",
+      title: "And ofc London Date",
+      location: "Ye to must hai",
       image:
-        "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=85",
+        "https://i.pinimg.com/1200x/c7/13/5a/c7135a3d9e455d61760c6e91c84e6e2b.jpg",
       icon: MapPin,
     },
     {
-      title: "Peaceful Temple Gardens",
-      location: "Kyoto, Japan",
+      title: "Hogwarts to banta h",
+      location: "London jaye aur Hogwarts na jaye, Meka laadle disposable",
       image:
-        "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=85",
-      icon: Star,
+        "https://i.pinimg.com/1200x/09/af/42/09af42b2a3b463d9e76fa1e62044e9d4.jpg",
+      icon: Coffee,
     },
   ],
 
   Goa: [
     {
-      title: "Rent a Scooter & Chase Sunsets",
-      location: "Chapora, Goa",
+      title: "Beach e ghuru ghuru & Bakchodi",
+      location: "Thori bakchodi to banti hai",
       image:
-        "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=600&q=85",
+        "https://i.pinimg.com/736x/05/ad/1f/05ad1f645a584eb7ab1d86bf20bf0d49.jpg",
       icon: Bike,
     },
     {
-      title: "Late Night Beach Waves",
-      location: "Palolem Beach",
+      title: "Goa wale beech pe",
+      location: "Ek ek beer to banti hai",
       image:
-        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=85",
+        "https://i.pinimg.com/736x/8d/d8/15/8dd8159a7dc40cf20b75e5a0992aea01.jpg",
       icon: MapPin,
     },
     {
-      title: "Cozy Beach Shack Dinner",
-      location: "Anjuna Shoreline",
+      title: "Jol e neme chumu khbuuu ",
+      location: "The Last Sunrise er moto 👉🏼👈🏼",
       image:
-        "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=85",
+        "https://i.pinimg.com/736x/83/37/c8/8337c8bd9d6c99cb85e8d3bf9f6b2e6a.jpg",
       icon: Wine,
     },
     {
-      title: "Long Coastal Drive",
-      location: "Goa Countryside",
+      title: "The Goa Date",
+      location: "Samandar kinare ek date to banti hai",
       image:
-        "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=600&q=85",
+        "https://i.pinimg.com/736x/15/34/45/15344576eb048e90de46c47e11b0d6fa.jpg",
       icon: Car,
     },
   ],
@@ -154,137 +112,74 @@ export const tabContentMap = {
   Clubbing: [
     {
       title: "Dress Up & Dance All Night",
-      location: "VIP Club Floor",
+      location: "Club me jana to banta h",
       image:
-        "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=85",
+        "https://i.pinimg.com/736x/85/3c/e4/853ce41643cdf4a49a547bfcb20416f2.jpg",
       icon: Music,
     },
     {
-      title: "Concert Front Row Experience",
-      location: "Live Music Arena",
+      title: "Sunidhu Chouhan ka Concert",
+      location: "Apke pasandida chatpate gaane live sunna to banta h",
       image:
-        "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=600&q=85",
+        "https://i.pinimg.com/736x/f9/2e/ca/f92ecab14fe163433f6a228ba92bf8a8.jpg",
       icon: Play,
     },
     {
-      title: "Rooftop Party Beats",
-      location: "City Skyline Club",
+      title: "Raat me geri marne chalenge",
+      location: "Mustang Leke Jayenge",
       image:
-        "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=85",
+        "https://i.pinimg.com/736x/10/49/c6/1049c6b9812a27ebf14f857b02f1ba19.jpg",
       icon: Star,
     },
     {
-      title: "Late Night Neon Vibes",
-      location: "Downtown Lounge",
+      title: "Aur humare Passport",
+      location: "Ese dikhne chahiye",
       image:
-        "https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?auto=format&fit=crop&w=600&q=85",
+        "https://i.pinimg.com/736x/cf/d6/9b/cfd69b625562823547546e83e679eb6b.jpg",
       icon: Wine,
     },
   ],
 
-  Drinks: [
+  "Rainy Days": [
     {
-      title: "Cocktails Only When Together",
-      location: "Skyline Cocktail Bar",
+      title: "Bristi te Vijbo",
+      location: "Ar jor ele eksonge Paracetamol khbo",
       image:
-        "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=85",
-      icon: GlassWater,
-    },
-    {
-      title: "Wine Tasting Evening",
-      location: "Vineyard Cellar",
-      image:
-        "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=85",
-      icon: Wine,
-    },
-    {
-      title: "Warm Coffee & Deep Talks",
-      location: "Corner Café",
-      image:
-        "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=85",
-      icon: Coffee,
-    },
-    {
-      title: "Sunset Drinks by the Water",
-      location: "Pier Bar",
-      image:
-        "https://images.unsplash.com/photo-1575444758702-4a6b9222336e?auto=format&fit=crop&w=600&q=85",
-      icon: Heart,
-    },
-  ],
-
-  "Rainy Dates": [
-    {
-      title: "Cozy Indoor Movie Marathon",
-      location: "Our Living Room",
-      image:
-        "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=600&q=85",
+        "https://i.pinimg.com/736x/2b/56/93/2b569360df97d48a1bd2ae94b722b53f.jpg",
       icon: CloudRain,
     },
     {
-      title: "Rain Walk Under One Umbrella",
-      location: "City Streets in Rain",
+      title: "Pyaaz er Pakoda banabu",
+      location: "Bcz You havent tasted yet",
       image:
-        "https://images.unsplash.com/photo-1519692933481-e162a57d6721?auto=format&fit=crop&w=600&q=85",
+        "https://i.pinimg.com/1200x/89/24/9c/89249cdb5987eb327fcd4b95b80f19c4.jpg",
       icon: Heart,
     },
     {
       title: "Hot Chocolate at a Rainy Window",
       location: "Glasshouse Café",
       image:
-        "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=85",
+        "https://i.pinimg.com/1200x/50/8c/4f/508c4ff6d1d8710a39ac293407488a5a.jpg",
       icon: Coffee,
     },
     {
       title: "Long Drive Listening to Rain",
       location: "Highway with Music",
       image:
-        "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&q=85",
+        "https://i.pinimg.com/1200x/59/af/42/59af42d5f7892af2761e544f10c43b90.jpg",
       icon: Car,
     },
   ],
-
-  More: [
-    {
-      title: "Spontaneous Shopping Spree",
-      location: "Boutique Street",
-      image:
-        "https://images.unsplash.com/photo-1555529771-835f59fc5efe?auto=format&fit=crop&w=600&q=85",
-      icon: ShoppingBag,
-    },
-    {
-      title: "Late Night Long Drive Adventure",
-      location: "Somewhere New",
-      image:
-        "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1200&q=85",
-      icon: Car,
-    },
-    {
-      title: "Stargazing Away From City Lights",
-      location: "Mountain Viewpoint",
-      image:
-        "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=600&q=85",
-      icon: Star,
-    },
-    {
-      title: "Adding More Dreams to the List",
-      location: "Everywhere Together",
-      image:
-        "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?auto=format&fit=crop&w=600&q=85",
-      icon: Compass,
-    },
-  ],
-
 };
 
 export const stories = [
   {
     category: "Paris",
     title:
-      "Walk around Paris at night, see the Eiffel Tower sparkle and find a tiny café together.",
+      "Couple Diwali",
     date: "Bucket List • Paris",
     image:
-      "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=700&q=85",
+      "https://i.pinimg.com/1200x/89/17/d1/8917d1e94d97af4dc2ced3813dcf7910.jpg",
   },
   {
     category: "Goa",
@@ -292,7 +187,7 @@ export const stories = [
       "Go to Goa, rent a scooter, chase sunsets and spend the evening somewhere near the sea.",
     date: "Bucket List • Goa",
     image:
-      "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=600&q=85",
+      "https://i.pinimg.com/736x/88/e9/81/88e9811332623284949e1d9d1e6847f5.jpg",
   },
   {
     category: "Night Out",
@@ -300,6 +195,6 @@ export const stories = [
       "Dress up, go clubbing, dance together and have a drink only when we're together.",
     date: "Bucket List • Us",
     image:
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=85",
+      "https://i.pinimg.com/1200x/4a/c7/4c/4ac74c12e65a2abbe81af08d57224e29.jpg",
   },
 ];
