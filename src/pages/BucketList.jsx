@@ -9,8 +9,12 @@ import {
   Coffee,
   Heart,
 } from "lucide-react";
-import { destinationTabs, tabContentMap, stories } from "../utils/bucketListData";
-
+import {
+  destinationTabs,
+  tabContentMap,
+  stories,
+} from "../utils/bucketListData";
+import biryani from "../assets/gadgets/biryani.jpg";
 const BucketList = () => {
   const [activeTab, setActiveTab] = useState("Popular");
 
@@ -63,32 +67,15 @@ const BucketList = () => {
           <div className="lg:col-span-5 grid grid-cols-2 gap-4">
             <div className="bg-[#DFF3FF] rounded-sm h-64 sm:h-80 flex items-center justify-center relative overflow-hidden shadow-inner">
               <img
-                src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1000&q=85"
+                src="https://i.pinimg.com/736x/fb/e4/c7/fbe4c70413c50792e260fffbfcb55148.jpg"
                 alt="Paris"
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1687D8]/70 via-transparent to-transparent" />
-              <div className="absolute bottom-4 left-4 text-white">
-                <p className="text-xs uppercase tracking-widest font-semibold opacity-90">
-                  Dream trip
-                </p>
-                <p className="font-bold text-lg">Paris with you</p>
-              </div>
             </div>
 
             <div className="flex flex-col gap-4">
               <div className="bg-[#FFF3C4] rounded-sm h-32 sm:h-38 flex items-center justify-center relative overflow-hidden shadow-inner">
-                <img
-                  src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=85"
-                  alt="Japan"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-[#FFD43B]/20" />
-                <div className="absolute bottom-3 left-3">
-                  <span className="bg-white/90 text-[#183B56] text-[10px] font-bold px-3 py-1.5 rounded-full">
-                    Japan
-                  </span>
-                </div>
+                <img src={biryani} alt="Japan" className="" />
               </div>
 
               <div className="bg-[#FFE5E8] rounded-sm h-32 sm:h-38 flex items-center justify-center relative overflow-hidden shadow-inner">
@@ -128,7 +115,7 @@ const BucketList = () => {
 
           {/* TABS */}
           <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-6 no-scrollbar">
-            {destinationTabs.map((tab) => (
+            {destinationTabs?.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
@@ -212,79 +199,53 @@ const BucketList = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* MAIN STORY */}
             <div className="lg:col-span-7 flex flex-col">
-              <div className="bg-[#DFF3FF] rounded-sm h-64 sm:h-80 mb-4 flex items-center justify-center relative overflow-hidden shadow-inner">
+              <div className="group relative overflow-hidden rounded-xl h-[400px] bg-[#DFF3FF] border border-[#E4F1F7]">
                 <img
-                  src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1200&q=85"
+                  src="https://i.pinimg.com/736x/db/50/c5/db50c5f3cca9658b4e807928741102db.jpg"
                   alt="Travel adventure"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-[#183B56]/70 via-transparent to-transparent" />
 
-                <div className="absolute left-5 bottom-5 text-white">
-                  <span className="inline-flex items-center gap-1.5 bg-[#1687D8] px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider mb-2">
-                    <Car className="w-3 h-3" />
-                    Long Drive
-                  </span>
-
-                  <p className="font-bold text-xl sm:text-2xl">
+                <div className="absolute left-5 right-5 bottom-5">
+                  <p className="font-medium font-heading text-xl sm:text-2xl text-white leading-snug max-w-xl">
                     Just drive until we find somewhere beautiful.
                   </p>
                 </div>
               </div>
-
-              <span className="text-xs font-semibold uppercase tracking-wider text-[#E63946] mb-1">
-                Adventure
-              </span>
-
-              <h3 className="font-bold text-xl sm:text-2xl mb-2 leading-snug text-[#183B56]">
-                One road, two people, our playlist and absolutely no rush.
-              </h3>
-
-              <p className="text-xs text-gray-400 mb-3">
-                Bucket List • No deadline
-              </p>
-
-              <p className="text-gray-600 text-sm line-clamp-2">
-                Grab some snacks, play our favorite songs and drive somewhere
-                neither of us has been before. Stop for photos, food and
-                whatever looks interesting on the way.
-              </p>
             </div>
 
             {/* SIDE STORIES */}
-            <div className="lg:col-span-5 flex flex-col gap-6 justify-between">
-              {stories.slice(1).map((story, i) => (
+            <div className="lg:col-span-5 flex flex-col gap-5 justify-between">
+              {stories.slice(0).map((story, i) => (
                 <div
                   key={i}
-                  className="flex gap-4 items-center group cursor-pointer"
+                  className="group flex gap-4 items-center cursor-pointer"
                 >
-                  <div
-                    className={`${
-                      i === 0
-                        ? "bg-[#FFF3C4]"
-                        : i === 1
-                          ? "bg-[#E4F8EF]"
-                          : "bg-[#FFE8E8]"
-                    } rounded-2xl w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0 flex items-center justify-center relative overflow-hidden shadow-inner`}
-                  >
+                  {/* Image */}
+                  <div className="w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0 rounded-xl overflow-hidden bg-[#EAF7FF]">
                     <img
                       src={story.image}
                       alt={story.title}
-                      className="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
 
-                  <div>
-                    <span className="text-xs font-semibold uppercase tracking-wider text-[#1687D8]">
-                      {story.category}
-                    </span>
+                  {/* Content */}
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center justify-between gap-3">
+                      <h4 className="font-medium font-heading text-sm sm:text-base leading-snug text-[#183B56] group-hover:text-[#1687D8] transition-colors line-clamp-2">
+                        {story.title}
+                      </h4>
 
-                    <h4 className="font-bold text-sm sm:text-base leading-snug group-hover:text-[#1687D8] transition line-clamp-2 my-1 text-[#183B56]">
-                      {story.title}
-                    </h4>
+                      <ChevronRight
+                        size={16}
+                        className="flex-shrink-0 text-gray-300 group-hover:text-[#1687D8] group-hover:translate-x-1 transition-all"
+                      />
+                    </div>
 
-                    <p className="text-xs text-gray-400">{story.date}</p>
+                    <p className="text-xs text-gray-400 mt-1">{story.date}</p>
                   </div>
                 </div>
               ))}
@@ -360,38 +321,39 @@ const BucketList = () => {
             <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6 relative">
               <div className="bg-[#DFF3FF] rounded-sm h-80 sm:h-96 flex items-center justify-center relative overflow-hidden shadow-inner">
                 <img
-                  src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1000&q=85"
-                  alt="Japan"
+                  src="https://i.pinimg.com/1200x/0b/83/50/0b8350bf16eee190ddba9da7e85c7a13.jpg"
+                  alt="Date"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
 
                 <div className="absolute bottom-5 left-5 right-5 text-white">
                   <p className="text-[10px] uppercase tracking-[0.18em] font-bold opacity-90">
-                    One day
+                    One day, for sure
                   </p>
-                  <p className="font-bold text-lg">
-                    Japan, cherry blossoms and you.
+                  <p className="font-medium font-heading text-lg">
+                    Cricket Date at Lords Balcony
                   </p>
                 </div>
               </div>
 
-              <div className="bg-[#FFE8E8] rounded-sm h-80 sm:h-96 flex items-center justify-center relative overflow-hidden shadow-inner group cursor-pointer">
+              <div className="bg-[#DFF3FF] rounded-sm h-80 sm:h-96 flex items-center justify-center relative overflow-hidden shadow-inner">
                 <img
-                  src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1000&q=85"
-                  alt="Night out"
-                  className="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                  src="https://i.pinimg.com/736x/55/a2/77/55a27730f75c2f2ba2544f17084e86e9.jpg"
+                  alt="Date"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
 
-                <div className="absolute inset-0 bg-black/25 flex items-center justify-center group-hover:bg-black/35 transition">
-                  <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
-                    <Play className="w-5 h-5 text-[#1687D8] fill-current ml-0.5" />
-                  </div>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
 
-                <div className="absolute bottom-4 left-4 right-4 text-white font-medium text-sm drop-shadow">
-                  Dress up. Dance. Laugh. Have our kind of night.
+                <div className="absolute bottom-5 left-5 right-5 text-white">
+                  <p className="text-[10px] uppercase tracking-[0.18em] font-bold opacity-90">
+                    Also One day
+                  </p>
+                  <p className="font-medium font-heading text-lg">
+                    Cricket Date at Lords Balcony
+                  </p>
                 </div>
               </div>
 

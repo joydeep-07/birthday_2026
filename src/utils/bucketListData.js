@@ -287,14 +287,6 @@ export const stories = [
       "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=700&q=85",
   },
   {
-    category: "Japan",
-    title:
-      "Take a trip to Japan, explore Tokyo together and spend a day surrounded by cherry blossoms.",
-    date: "Bucket List • Japan",
-    image:
-      "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=600&q=85",
-  },
-  {
     category: "Goa",
     title:
       "Go to Goa, rent a scooter, chase sunsets and spend the evening somewhere near the sea.",
