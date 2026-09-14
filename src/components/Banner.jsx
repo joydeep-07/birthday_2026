@@ -1,72 +1,68 @@
-
 import React from "react";
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import door from "../assets/gadgets/anywheredoor.png";
 
 const Banner = () => {
   return (
-    <section className="bg-[#EAF7FF] px-4 py-10 md:px-12 md:py-14">
-      <div className="mx-auto flex flex-col overflow-hidden rounded-sm border border-[#D7EEF9] bg-white shadow-[0_12px_40px_rgba(70,170,220,0.10)] md:flex-row">
+    <section className="relative overflow-hidden px-4 py-5 md:px-12 md:py-10">
+      {/* Soft background ambient glow effects */}
+      <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-sky-200/40 blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-pink-200/30 blur-3xl pointer-events-none" />
 
-        {/* LEFT — Door */}
-        <div className="flex w-full items-center justify-center px-6 py-8 md:w-[42%] md:px-10 md:py-10">
+      <div className="relative mx-auto flex  flex-col overflow-hidden rounded-sm border border-sky-100 bg-white/80 transition-all duration-500 md:flex-row">
+        {/* LEFT — Door with atmospheric backdrop */}
+        <div className="relative flex w-full items-center justify-center bg-gradient-to-br from-sky-50/60 to-transparent px-6 py-10 md:w-[42%] md:px-12 md:py-14">
           <img
             src={door}
             alt="Anywhere Door"
-            className="h-[280px] object-contain transition-transform duration-500 hover:-translate-y-1 md:h-[370px]"
+            className="relative h-[280px] object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.08)] transition-transform duration-700 hover:scale-105 hover:-translate-y-2 md:h-[390px]"
           />
         </div>
 
         {/* RIGHT — Content */}
-        <div className="flex w-full flex-col justify-between px-7 py-9 sm:px-10 md:w-[58%] md:px-12 md:py-12">
-
+        <div className="flex w-full flex-col justify-between px-8 py-10 sm:px-12 md:w-[58%] md:px-14 md:py-14">
           <div>
-            {/* Small label */}
-            <div className="mb-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-sky-500">
-             
+            {/* Small pill badge label */}
+            <div className="mb-6 inline-flex items-center gap-2 text-xs font-medium tracking-wide text-sky-600 uppercase">
               <span>A little journey for you</span>
             </div>
 
-            <h1 className="max-w-2xl text-4xl font-heading font-semibold leading-[1.05] tracking-tight text-sky-500 sm:text-5xl md:text-[54px]">
-              Let's Get in the
-              <span className="block text-[#FF78A8]">
+            <h1 className="max-w-2xl text-4xl font-heading font-bold leading-[1.1] tracking-tight text-slate-800 sm:text-5xl md:text-[52px]">
+              Let's Get in the{" "}
+              <span className="bg-gradient-to-r from-pink-500 to-rose-400 bg-clip-text text-transparent">
                 Time Line
               </span>
             </h1>
 
-            <p className="mt-5 max-w-xl text-sm leading-7 text-[#666] sm:text-[15px]">
-              Some moments are too special to leave behind. So let's open
-              the Anywhere Door and take a little trip through our memories,
-              the moments we've shared, and everything still waiting for us.
+            <p className="mt-5 max-w-xl text-justify text-xs md:text-sm leading-relaxed text-slate-600 font-normal">
+              Some moments are too special to leave behind. So let's open the
+              Anywhere Door and take a little trip through our memories, the
+              moments we've shared, and everything still waiting for us.
             </p>
           </div>
 
           {/* Bottom area */}
-          <div className="mt-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-
+          <div className="mt-12 flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between border-t border-slate-100 pt-6">
             {/* Tiny details */}
-            <div className="flex gap-8">
+            <div className="flex gap-10">
               <div>
-                <p className="text-xl font-semibold text-sky-500">∞</p>
-                <p className="mt-1 text-[10px] uppercase tracking-[0.15em] text-gray-400">
+                <p className="text-2xl font-bold text-sky-500 tracking-tight">
+                  ∞
+                </p>
+                <p className="mt-0.5 text-[11px] font-medium uppercase tracking-[0.18em] text-slate-400">
                   Memories
                 </p>
               </div>
 
-              <div>
-                <p className="text-xl font-semibold text-[#FF78A8]">01</p>
-                <p className="mt-1 text-[10px] uppercase tracking-[0.15em] text-gray-400">
-                  Special Girl
-                </p>
-              </div>
+              <div className="h-10 w-[1px] bg-slate-100" />
             </div>
 
-            {/* Button */}
-            <button className="group flex w-fit items-center gap-2 border-b border-sky-400 pb-1.5 text-sm font-semibold text-sky-500 transition-all duration-300 hover:gap-3">
+            {/* Aesthetic interactive button */}
+            <button className="group relative inline-flex items-center justify-between gap-3 overflow-hidden rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-white shadow-md shadow-sky-500/20 transition-all duration-300 hover:bg-sky-600 hover:shadow-lg hover:shadow-sky-500/30 active:scale-95">
               <span>See the magic</span>
               <ArrowUpRight
-                size={17}
-                className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                size={16}
+                className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
             </button>
           </div>

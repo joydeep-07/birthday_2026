@@ -35,30 +35,22 @@ const BucketList = () => {
               </span>
             </div>
 
-            <h1 className="font-heading text-4xl sm:text-7xl font-black tracking-tight leading-tight text-[#183B56]">
-              Places We <span className="text-[#1687D8]">Need To See</span>
+            <h1 className="font-heading text-3xl sm:text-5xl font-black tracking-tight leading-tight text-[#183B56]">
+             Things In<span className="text-[#1687D8]"> Our Bucket List</span>
             </h1>
 
-            <p className="text-gray-600 text-base sm:text-lg max-w-xl leading-relaxed">
+            <p className="text-gray-600 text-xs sm:text-sm text-justify max-w-xl leading-relaxed">
               Paris nights, Japan adventures, Goa sunsets, rainy dates, shopping
               without a plan, late-night clubs, drinks together, bike rides and
               long drives. A list of all the little things we still have to
               experience together.
             </p>
 
-            <div>
-              <button className="flex items-center gap-2 bg-[#1687D8] text-white px-6 py-3 rounded-full font-medium hover:bg-[#0D75BF] transition shadow-sm">
-                <Compass className="w-5 h-5" />
-                <span>Start exploring</span>
-              </button>
-            </div>
 
             <div className="flex items-center gap-3 pt-1">
-              <span className="w-8 h-8 rounded-full bg-[#1687D8] border-4 border-[#EAF7FF]" />
-              <span className="w-2.5 h-2.5 rounded-full bg-[#E63946]" />
-              <span className="w-2.5 h-2.5 rounded-full bg-[#FFD43B]" />
+             
               <span className="text-xs text-gray-400">
-                Anywhere is better when we're together.
+               Jekhanei jabo, Chumu khawa ta bucket list e rakhbo ? 🫦
               </span>
             </div>
           </div>
@@ -73,12 +65,12 @@ const BucketList = () => {
               />
             </div>
 
-            <div className="flex flex-col gap-4">
-              <div className="bg-[#FFF3C4] rounded-sm h-32 sm:h-38 flex items-center justify-center relative overflow-hidden shadow-inner">
-                <img src={biryani} alt="Japan" className="" />
+            <div className="flex flex-col justify-between gap-4">
+              <div className=" h-1/2 rounded-sm flex items-center justify-center relative overflow-hidden shadow-inner">
+                <img src={biryani} alt="Japan" className="object-cover h-full w-full" />
               </div>
 
-              <div className="bg-[#FFE5E8] rounded-sm h-32 sm:h-38 flex items-center justify-center relative overflow-hidden shadow-inner">
+              <div className="  h-1/2 rounded-sm flex items-center justify-center relative overflow-hidden shadow-inner">
                 <img
                   src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=800&q=85"
                   alt="Goa"
