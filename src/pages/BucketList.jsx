@@ -174,10 +174,7 @@ const BucketList = () => {
               </h2>
             </div>
 
-            <button className="flex items-center gap-1 text-sm font-semibold border border-[#B8DFF5] text-[#1687D8] px-4 py-2 rounded-full hover:bg-[#EAF7FF] transition cursor-pointer">
-              <span>View everything</span>
-              <ChevronRight className="w-4 h-4" />
-            </button>
+            
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -190,21 +187,17 @@ const BucketList = () => {
                       : i === 1
                         ? "bg-[#FFF5C9]"
                         : "bg-[#E4F8EF]"
-                  } rounded-sm h-56 sm:h-60 mb-3.5 flex items-center justify-center relative overflow-hidden shadow-xs border border-gray-100/50 transition-all duration-300`}
+                  } rounded-sm md:h-55 h-80  mb-3.5 flex items-center justify-center relative overflow-hidden shadow-xs border border-gray-100/50 transition-all duration-300`}
                 >
                   <img
                     src={story.image}
                     alt={story.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700"
                   />
 
                   <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300" />
 
-                  <div className="absolute top-3 left-3 z-10">
-                    <span className="bg-white/90 text-[#183B56] text-[10px] font-bold px-3 py-1 rounded-full shadow-xs">
-                      {story.category}
-                    </span>
-                  </div>
+                 
 
                   <div className="absolute left-4 right-4 bottom-4 text-white">
                     <p className="text-[10px] uppercase tracking-[0.18em] font-bold opacity-90 drop-shadow-xs">
@@ -213,17 +206,9 @@ const BucketList = () => {
                   </div>
                 </div>
 
-                <h3 className="font-semibold font-heading text-base text-[#183B56] group-hover:text-[#1687D8] transition-colors duration-200 line-clamp-2">
-                  {story.title}
-                </h3>
+              
 
-                <div className="flex items-center gap-1 text-xs font-semibold text-[#1687D8] mt-2">
-                  <span>Explore moment</span>
-                  <ChevronRight
-                    size={14}
-                    className="group-hover:translate-x-1 transition-transform"
-                  />
-                </div>
+               
               </div>
             ))}
           </div>
@@ -267,7 +252,7 @@ const BucketList = () => {
 
                 {/* MESSAGE */}
                 <h3 className="font-bold font-heading text-lg mb-3 text-[#183B56] leading-snug">
-                  Happy Birthday, my favorite human. 🎂
+                  Hey Lovee ❤️
                 </h3>
 
                 <p className="text-xs sm:text-sm text-gray-600 text-justify leading-relaxed mb-5">
@@ -307,7 +292,7 @@ const BucketList = () => {
                 <img
                   src="https://i.pinimg.com/736x/df/b0/10/dfb010a4ced5888dc55912773a04d618.jpg"
                   alt="Date"
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 "
                 />
 
                 <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300" />
@@ -326,7 +311,7 @@ const BucketList = () => {
                 <img
                   src="https://i.pinimg.com/736x/79/e9/48/79e9488c24dc5ae75cb8bb3c8ac44d82.jpg"
                   alt="Date"
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700"
                 />
 
                 <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300" />
@@ -336,7 +321,7 @@ const BucketList = () => {
                     And some day
                   </p>
                   <p className="font-medium font-heading text-lg mt-0.5">
-                    Eksonge Banaras Jabo 
+                    Eksonge Banaras abo 
                   </p>
                 </div>
               </div>
