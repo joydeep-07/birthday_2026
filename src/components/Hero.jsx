@@ -4,7 +4,7 @@ import { Heart } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="w-full px-3 py-8 md:px-12 md:py-0">
+    <section className="w-full px-3 py-3 md:px-12 md:py-0">
       <div className="main relative flex w-full flex-col items-center justify-between gap-8 overflow-hidden border border-[#183B56]/10 bg-white/60 px-4 py-4 md:flex-row md:gap-8 md:px-10 md:py-10">
         {/* MOBILE BACKGROUND IMAGE */}
         <img

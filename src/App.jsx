@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import confetti from "canvas-confetti";
 
 import Navbar from "./layouts/Navbar";
@@ -10,6 +10,20 @@ import CountDown from "./components/CountDown";
 import Home from "./pages/Home";
 import BucketList from "./pages/BucketList";
 import Timeline from "./pages/Timeline";
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, [pathname]);
+
+  return null;
+};
 
 const App = () => {
   // const countDownDate = "August 21, 2026 13:22:00";
@@ -72,6 +86,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <LenisScroll />
+
+      <ScrollToTop />
 
       <Navbar />
 
