@@ -6,8 +6,8 @@ const Banner = () => {
   return (
     <section className="relative overflow-hidden px-4 py-5 md:px-12 md:py-10">
       {/* Soft background ambient glow effects */}
-      <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-sky-200/40 blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-pink-200/30 blur-3xl pointer-events-none" />
+      {/* <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-sky-200/40 blur-3xl pointer-events-none" /> */}
+      {/* <div className="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-pink-200/30 blur-3xl pointer-events-none" /> */}
 
       <div className="relative mx-auto flex  flex-col overflow-hidden rounded-sm border border-sky-100 bg-white/80 transition-all duration-500 md:flex-row">
         {/* LEFT — Door with atmospheric backdrop */}
@@ -55,7 +55,7 @@ const Banner = () => {
                 </p>
               </div>
 
-              <div className="h-10 w-[1px] bg-slate-100" />
+              {/* <div className="h-10 w-[1px] bg-slate-100" /> */}
             </div>
 
            

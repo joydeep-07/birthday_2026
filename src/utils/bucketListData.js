@@ -174,20 +174,6 @@ export const tabContentMap = {
 
 export const stories = [
   {
-    category: "Paris",
-    title: "Couple Diwali",
-    date: "Chandra Taal jana hai",
-    image:
-      "https://i.pinimg.com/1200x/af/00/84/af008403c8e8e6a91fb35feb84411bdd.jpg",
-  },
-  {
-    category: "Goa",
-    title: "Kedarnath With you",
-    date: "Kedarnath With you",
-    image:
-      "https://i.pinimg.com/1200x/56/ee/6e/56ee6e8a84c4d605aad4a8400ec29a5c.jpg",
-  },
-  {
     category: "Night Out",
     title:
       "Dress up, go clubbing, dance together and have a drink only when we're together.",
@@ -210,5 +196,22 @@ export const stories = [
     date: "And a defender as well",
     image:
       "https://i.pinimg.com/1200x/6b/34/49/6b3449f231dee83d4a29fadc9d2f1f1c.jpg",
+  },
+
+  {
+    category: "Night Out",
+    title:
+      "Dress up, go clubbing, dance together and have a drink only when we're together.",
+    date: "Yatch me date",
+    image:
+      "https://i.pinimg.com/736x/b7/d1/8e/b7d18e5d39c8d903d19f1eb45261fd31.jpg",
+  },
+  {
+    category: "Night Out",
+    title:
+      "Dress up, go clubbing, dance together and have a drink only when we're together.",
+    date: "Private Jet bhi to chahiye",
+    image:
+      "https://i.pinimg.com/1200x/02/51/2f/02512f52500f2ad4ce7fbefb9012741b.jpg",
   },
 ];

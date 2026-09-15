@@ -45,9 +45,13 @@ const Hero = () => {
             A little letter for you
           </p>
 
-          <h1 className="mb-6 text-2xl font-normal font-heading tracking-tight text-[#183B56] md:text-6xl">
-            To my favorite person,
-            <span className="mt-1 md:block"> Happy Birthday.</span>
+          <h1 className="mb-6 flex items-center justify-start gap-2 font-heading text-3xl font-normal tracking-tight text-[#183B56] md:text-6xl">
+            <span>Happy Birthday</span>
+
+            <span className="flex items-center gap-5 text-red-600">
+              Love
+              {/* <Heart className="mt-1 h-6 w-6 stroke-red-600 md:h-10 md:w-10" /> */}
+            </span>
           </h1>
 
           <div className="max-w-4xl text-sm leading-7 text-[#183B56]/75 md:text-[15px]">

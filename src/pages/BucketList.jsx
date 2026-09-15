@@ -194,7 +194,7 @@ const BucketList = () => {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
             <div>
               <p className="text-xs uppercase tracking-[0.18em] text-[#E63946] font-bold mb-1">
-               Aur humare sapne
+               Aur humare chote chote sapne
               </p>
               {/* <h2 className="text-2xl font-heading sm:text-3xl font-bold tracking-tight text-[#183B56]">
                 Chote chote sapne

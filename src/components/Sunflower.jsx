@@ -10,7 +10,7 @@ const LazyImage = ({ src, alt, className }) => {
     <div className="relative w-full h-full flex items-center justify-center">
       {/* Skeleton Loader shown until the image loads */}
       {!isLoaded && (
-        <div className="absolute inset-0 bg-gray-200 animate-pulse z-10 rounded-sm" />
+        <div className="absolute inset-0 bg-white animate-pulse z-10 rounded-sm" />
       )}
 
       {/* Actual Image */}
