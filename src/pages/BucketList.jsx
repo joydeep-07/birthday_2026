@@ -121,7 +121,7 @@ const BucketList = () => {
                 Places & moments
               </p>
               <h2 className="text-2xl font-heading sm:text-3xl font-bold tracking-tight text-[#183B56]">
-                Things We Have To Do
+              The main Bucket List
               </h2>
             </div>
           </div>
@@ -194,11 +194,11 @@ const BucketList = () => {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
             <div>
               <p className="text-xs uppercase tracking-[0.18em] text-[#E63946] font-bold mb-1">
-                Little adventures
+               Aur humare sapne
               </p>
-              <h2 className="text-2xl font-heading sm:text-3xl font-bold tracking-tight text-[#183B56]">
-                Things We Want To Experience
-              </h2>
+              {/* <h2 className="text-2xl font-heading sm:text-3xl font-bold tracking-tight text-[#183B56]">
+                Chote chote sapne
+              </h2> */}
             </div>
           </div>
 

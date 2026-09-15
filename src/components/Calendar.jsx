@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ScratchCard from "./ScratchCard";
 
 // Importing images from src/assets/cal/
@@ -35,6 +35,37 @@ const timelineData = [
   { id: 4, caption: "Navami", image: navami, date: "October 1st, 2025" },
 ];
 
+// Helper wrapper component to inject a skeleton loader while the image loads
+const LazyScratchCardWrapper = ({ imageSrc, altText }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  return (
+    <div className="relative w-full overflow-hidden">
+      {/* Hidden preloader image to track load state */}
+      <img
+        src={imageSrc}
+        alt={altText}
+        onLoad={() => setIsLoaded(true)}
+        className="hidden"
+      />
+
+      {/* Skeleton Loader */}
+      {!isLoaded && (
+        <div className="absolute inset-0 bg-gray-200 animate-pulse z-20 rounded-sm min-h-[200px]" />
+      )}
+
+      {/* Actual ScratchCard */}
+      <div
+        className={`transition-opacity duration-500 ${
+          isLoaded ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <ScratchCard imageSrc={imageSrc} altText={altText} />
+      </div>
+    </div>
+  );
+};
+
 const Calendar = () => {
   return (
     <div className="md:px-12 px-3">
@@ -61,7 +92,7 @@ const Calendar = () => {
                         <h3 className="font-serif text-base md:text-lg font-medium text-neutral-900 mb-2 pb-1 border-b border-[#e0b020]/30 inline-block tracking-wide">
                           {item.caption}
                         </h3>
-                        <ScratchCard
+                        <LazyScratchCardWrapper
                           imageSrc={item.image}
                           altText={item.caption}
                         />
@@ -100,7 +131,7 @@ const Calendar = () => {
                         <h3 className="font-serif text-base md:text-lg font-medium text-neutral-900 mb-2 pb-1 border-b border-[#e0b020]/30 inline-block tracking-wide">
                           {item.caption}
                         </h3>
-                        <ScratchCard
+                        <LazyScratchCardWrapper
                           imageSrc={item.image}
                           altText={item.caption}
                         />

@@ -30,9 +30,18 @@ const Sunflower = () => {
   return (
     <>
       <section className="w-full px-3 py-10 md:px-12 md:py-0">
-        <div className="flex w-full flex-col items-center gap-10 border border-[#183B56]/10 bg-white/50 px-3 py-8 md:flex-row md:items-start md:gap-16 md:px-12 md:py-14">
-          {/* Image */}
-          <div className="flex w-full shrink-0 justify-center md:w-[25%]">
+        <div className="main relative flex w-full flex-col items-center gap-10 overflow-hidden border border-[#183B56]/10 bg-white/50 px-3 py-8 md:flex-row md:items-start md:gap-16 md:px-12 md:py-14">
+          {/* MOBILE BACKGROUND IMAGE */}
+          <div className="absolute inset-0 z-0 flex items-center justify-center opacity-20 md:hidden pointer-events-none">
+            <LazyImage
+              src={sun}
+              alt=""
+              className="h-full w-3/4 object-contain"
+            />
+          </div>
+
+          {/* DESKTOP SIDE IMAGE */}
+          <div className="hidden md:flex w-full shrink-0 justify-center md:w-[25%] relative z-10">
             <div className="relative flex items-center justify-center w-56 md:w-72">
               <LazyImage
                 src={sun}
@@ -43,7 +52,7 @@ const Sunflower = () => {
           </div>
 
           {/* Text */}
-          <div className="w-full md:w-full">
+          <div className="w-full md:w-full relative z-10">
             <div className="flex justify-between items-center md:mb-3">
               <div className="h-18 md:h-20 w-36 md:w-40 relative">
                 <LazyImage
@@ -53,7 +62,7 @@ const Sunflower = () => {
                 />
               </div>
             </div>
-            <p className="text-justify leading-7  text-[#183B56] md:text-[15px]">
+            <p className="text-justify leading-7 text-[#183B56] text-sm md:text-[15px]">
               They say a sunflower always turns towards the sun because that’s
               where it finds light, warmth, and strength. Surjo jokhon thakena,
               tokhono seta wait kore je se abar thik fire asbe. Temni, you are

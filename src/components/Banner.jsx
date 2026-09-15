@@ -58,14 +58,7 @@ const Banner = () => {
               <div className="h-10 w-[1px] bg-slate-100" />
             </div>
 
-            {/* Aesthetic interactive button */}
-            <button className="group relative inline-flex items-center justify-between gap-3 overflow-hidden rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-white shadow-md shadow-sky-500/20 transition-all duration-300 hover:bg-sky-600 hover:shadow-lg hover:shadow-sky-500/30 active:scale-95">
-              <span>See the magic</span>
-              <ArrowUpRight
-                size={16}
-                className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              />
-            </button>
+           
           </div>
         </div>
       </div>
