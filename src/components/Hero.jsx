@@ -1,17 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import letter from "../assets/gadgets/letter.png";
 import { Heart } from "lucide-react";
+
+// Reusable Image component with a skeleton loader applied only to the image area
+const LazyImage = ({ src, alt, className }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  return (
+    <div className="relative w-full h-full flex items-center justify-center">
+      {/* Skeleton Loader shown until the image loads */}
+      {!isLoaded && (
+        <div className="absolute inset-0 bg-gray-200 animate-pulse z-10 rounded-sm" />
+      )}
+
+      {/* Actual Image */}
+      <img
+        src={src}
+        alt={alt}
+        onLoad={() => setIsLoaded(true)}
+        className={`${className} transition-opacity duration-500 ${
+          isLoaded ? "opacity-100" : "opacity-0"
+        }`}
+      />
+    </div>
+  );
+};
 
 const Hero = () => {
   return (
     <section className="w-full px-3 py-3 md:px-12 md:py-0">
       <div className="main relative flex w-full flex-col items-center justify-between gap-8 overflow-hidden border border-[#183B56]/10 bg-white/60 px-4 py-4 md:flex-row md:gap-8 md:px-10 md:py-10">
         {/* MOBILE BACKGROUND IMAGE */}
-        <img
-          src={letter}
-          alt=""
-          className="absolute left-1/2 top-1/2 z-0 h-full w-70 -translate-x-1/2 -translate-y-1/2 object-contain opacity-40 md:hidden"
-        />
+        <div className="absolute left-1/2 top-1/2 z-0 h-full w-70 -translate-x-1/2 -translate-y-1/2 opacity-40 md:hidden">
+          <LazyImage
+            src={letter}
+            alt=""
+            className="h-full w-full object-contain"
+          />
+        </div>
 
         {/* LEFT */}
         <div className="left relative z-10 w-full md:w-4/5">
@@ -28,23 +54,32 @@ const Hero = () => {
             <p className="text-justify leading-7 text-[#183B56]">
               Heppiii Birthday tuuu youuu heppi birthday tuuu youuuu heppi
               birthday tuuu may baybeeee heppi birtthday tuuu youuuuuuuuu.
-              💋💋💋💋💋 You are sexyyyy DP wali sundor badie thats sobai knows,
-              but tumi jevabe sopno dekho, seta tar thekeo besi sundor. Ei bodle
-              jawa duniya tumi jevabe amader realtion take gurutto dao, seta aro
-              sundor. Ar eto kichur poreo tumi je vabe amar pase thako, seta
-              amar kache sotti khub sundor. Jokhon ami nijeke niye doubt korte
-              shuru kori, jokhon nijer oporei amar bissas thake na, tokhono tumi
-              jevabe amar opor bishash rakho, amr paase darao, seta aro besi
-              sundor. ❤️
+              💋💋💋💋💋 Tumi amr sexy DP wali sundor baddieee, eta toh sobai
+              jane 😗💋 but tumi jevabe sopno dekho, seta tar thekeo besi
+              sundor. Ei bodle jawa duniya te tumi jevabe amader relation take
+              eto gurutto dao, eto care koro, seta amar kache sotti khub besi
+              sundor. ❤️ Ar eto kichur poreo tumi jevabe amar pase thako, amk
+              bujho, amar kharap somoy gulote amr sathe darao, seta amar kache
+              onk besi matter kore. Jokhon ami nijeke niye doubt korte shuru
+              kori, jokhon nijer oporei amar bissas thake na, tokhono tumi
+              jevabe amar opor bishash rakho, amk motivate koro, amr pase
+              thako... sotti bolte gele, oigulo amar kache onk kichu. ❤️
               <br />
               Dekho, tumi jano je ami amar feelings express korte khub ekta
-              bhalo noi. Hoito protibar ami amar moner kotha gulo thik vabe
-              bolte pari na. But I love you. Ar aaj, tomar birthday te, sudhu
-              etukui bolte chai je...
+              bhalo noi 😭😂 Hoito protibar ami amar moner kotha gulo thik vabe
+              bolte pari na, hoito majhe majhe bakchodi korte korte important
+              kotha bola hoye othe na 😗🌝 But I love you. A lot. ❤️ Ar aaj
+              tomar birthday te sudhu etukui bolte chai je... thank you for
+              being with me, thank you for believing in me, thank you for
+              motivating me, ar thank you for emni kore amar pase thakar jonno.
+              ❤️
               <br />
-              Thank you for being with me, for believing in me & for motivating
-              me. Happy Birthday,love. Ei vabei khusi thako, bakchodi kro, ar
-              amr life er sob theke sundor part hye thako ... ❤️
+              Happy Birthday, loveee 💋❤️ Ei vabei khusi thako, emni sundor kore
+              sopno dekho, bakchodi kro, amk irritate kro 😭😂 ar amr life er
+              sob theke sundor part hoye emni kore theko... ❤️🌝 I love
+              youuuuuuu ❤️💋 Ar haaa, beshi emotional hoye abar thank you thank
+              you korte bosho na 😗😂 Jauu, birthday enjoy krooo, amar bbyyy
+              💋💋💋
             </p>
 
             <div className="mt-7 flex items-center gap-3">
@@ -60,9 +95,9 @@ const Hero = () => {
         </div>
 
         {/* RIGHT - DESKTOP ONLY */}
-        <div className="right relative z-10 hidden justify-end md:flex">
-          <img
-            className="w-70 object-contain md:w-100"
+        <div className="right relative z-10 hidden justify-end md:flex w-70 md:w-100">
+          <LazyImage
+            className="w-full object-contain"
             src={letter}
             alt="Birthday letter"
           />

@@ -26,8 +26,8 @@ const ScrollToTop = () => {
 };
 
 const App = () => {
-  // const countDownDate = "August 21, 2026 13:22:00";
-  const countDownDate = "September 16, 2026 00:00:00";
+  const countDownDate = "August 21, 2026 13:22:00";
+  // const countDownDate = "September 16, 2026 00:00:00";
 
   const targetTime = new Date(countDownDate).getTime();
 

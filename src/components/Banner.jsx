@@ -35,9 +35,10 @@ const Banner = () => {
             </h1>
 
             <p className="mt-5 max-w-xl text-justify text-xs md:text-sm leading-relaxed text-slate-600 font-normal">
-              Some moments are too special to leave behind. So let's open the
-              Anywhere Door and take a little trip through our memories, the
-              moments we've shared, and everything still waiting for us.
+              Doraemon er Anywhere Door jodi sotti thakto, tahole prothom kaj
+              hoto tomar kache chole asa 😗💋 Tarpor ekta door diye amader sob
+              favourite jaygay ghure beratam, ar amar moto lazy manus er kono
+              tension o nei 😭😂🌝
             </p>
           </div>
 

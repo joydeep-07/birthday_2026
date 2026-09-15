@@ -1,4 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
+
+// Reusable Image component with a skeleton loader applied only to the image area
+const LazyImage = ({ src, alt, className }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  return (
+    <div className="relative w-full h-full flex items-center justify-center">
+      {/* Skeleton Loader shown until the image loads */}
+      {!isLoaded && (
+        <div className="absolute inset-0 bg-gray-200 animate-pulse z-10 rounded-sm" />
+      )}
+
+      {/* Actual Image */}
+      <img
+        src={src}
+        alt={alt}
+        onLoad={() => setIsLoaded(true)}
+        className={`${className} transition-opacity duration-500 ${
+          isLoaded ? "opacity-100" : "opacity-0"
+        }`}
+      />
+    </div>
+  );
+};
 
 const Baby = ({ items = [], containerClassName = "", imageClassName = "" }) => {
   return (
@@ -18,7 +42,7 @@ const Baby = ({ items = [], containerClassName = "", imageClassName = "" }) => {
                 key={index}
                 className="flex aspect-square w-full items-center justify-center md:aspect-auto md:w-auto"
               >
-                <img
+                <LazyImage
                   src={imageSrc}
                   alt={imageAlt}
                   className={`h-full w-full object-cover md:h-52 md:w-auto ${imageClassName}`}

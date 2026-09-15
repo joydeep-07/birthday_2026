@@ -14,6 +14,30 @@ import { tabContentMap, stories } from "../utils/bucketListData";
 import biryani from "../assets/gadgets/biryani.jpg";
 import img1 from "../assets/images/doodle1.png";
 
+// Reusable Image component with a skeleton loader applied only to the image area
+const LazyImage = ({ src, alt, className }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  return (
+    <div className="relative w-full h-full">
+      {/* Skeleton Loader shown until the image loads */}
+      {!isLoaded && (
+        <div className="absolute inset-0 bg-gray-200 animate-pulse z-10" />
+      )}
+
+      {/* Actual Image */}
+      <img
+        src={src}
+        alt={alt}
+        onLoad={() => setIsLoaded(true)}
+        className={`${className} transition-opacity duration-500 ${
+          isLoaded ? "opacity-100" : "opacity-0"
+        }`}
+      />
+    </div>
+  );
+};
+
 const BucketList = () => {
   // Dynamically get tab names from tabContentMap keys (Popular, Paris, Japan, Goa, etc.)
   const availableTabs = Object.keys(tabContentMap);
@@ -39,16 +63,19 @@ const BucketList = () => {
               Things In<span className="text-[#1687D8]"> Our Bucket List</span>
             </h1>
 
-            <p className="text-gray-600 text-xs sm:text-sm text-justify max-w-xl leading-relaxed">
-              Paris nights, Japan adventures, Goa sunsets, rainy dates, shopping
-              without a plan, late-night clubs, drinks together, bike rides and
-              long drives. A list of all the little things we still have to
-              experience together.
+            <p className="text-gray-600 text-xs sm:text-sm text-justify max-w-3xl leading-relaxed">
+              Amader bucket list ta toh already ekta pura Doraemon er gadget
+              drawer er moto 😭😂 Koto kichu korte hobe ekhono, onk jaygay
+              ghurte hobe, cute cute date e jete hobe, eksathe onk photo tulte
+              hobe, notun notun food try korte hobe, ar obviously emon kichu
+              paglamo korte hobe jegulo pore mone kore dujonei hasbo 😗🌝 Kichu
+              plan ekhon sudhu “ekdin korbo” bole pore ache, but ekdin na ekdin
+              ogulo sob korbo.😭😂❤️
             </p>
 
             <div className="flex items-center gap-3 pt-1">
-              <span className="text-xs font-medium text-gray-500 py-1.5 rounded-md ">
-                Jekhanei jabo, Chumu khawa ta bucket list e rakhbo ? 🫦
+              <span className="text-xs sm:text-sm font-medium text-gray-500 py-1.5 rounded-md ">
+                Ar jekhanei jabo, Chumu khawa ta bucket list e rakhbo nki ? 🫦
               </span>
             </div>
           </div>
@@ -56,31 +83,31 @@ const BucketList = () => {
           {/* HERO IMAGE GRID */}
           <div className="lg:col-span-5 grid grid-cols-2 gap-3 sm:gap-4">
             <div className="bg-[#DFF3FF] rounded-lg h-64 sm:h-80 flex items-center justify-center relative overflow-hidden shadow-sm group">
-              <img
+              <LazyImage
                 src="https://i.pinimg.com/736x/fb/e4/c7/fbe4c70413c50792e260fffbfcb55148.jpg"
                 alt="icecream"
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 transition-opacity duration-300 pointer-events-none z-20" />
             </div>
 
             <div className="flex flex-col justify-between gap-3 sm:gap-4 h-64 sm:h-80">
               <div className="h-1/2 rounded-lg flex items-center justify-center relative overflow-hidden shadow-sm group">
-                <img
+                <LazyImage
                   src={biryani}
                   alt="biryani"
-                  className="absolute inset-0 object-cover h-full w-full transition-transform duration-500 group-hover:scale-105"
+                  className="absolute inset-0 object-cover h-full w-full transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0  transition-opacity duration-300 pointer-events-none z-20" />
               </div>
 
               <div className="h-1/2 rounded-lg flex items-center justify-center relative overflow-hidden shadow-sm group">
-                <img
+                <LazyImage
                   src="https://i.pinimg.com/736x/54/c9/08/54c90837149757f5a40e57f9d77096b9.jpg"
                   alt="Kitkat"
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-[#E63946]/15 group-hover:bg-[#E63946]/25 transition-colors duration-300" />
+                <div className="absolute inset-0 bg-[#E63946]/15 transition-colors duration-300 pointer-events-none z-20" />
               </div>
             </div>
           </div>
@@ -134,15 +161,15 @@ const BucketList = () => {
                             : "bg-[#FFE8E8]"
                     } rounded-sm h-55 sm:h-60 mb-3.5 flex items-center justify-center relative overflow-hidden shadow-xs border border-gray-100/50 transition-all duration-300`}
                   >
-                    <img
+                    <LazyImage
                       src={dest.image}
                       alt={dest.title}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-700"
                     />
 
-                    <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-opacity duration-300 from-black/80" />
+                    <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 pointer-events-none z-20" />
 
-                    <div className="absolute left-4 right-4 bottom-4 text-white">
+                    <div className="absolute left-4 right-4 bottom-4 text-white z-30 pointer-events-none">
                       <p className="text-[10px] uppercase tracking-[0.18em] font-bold opacity-90 drop-shadow-xs">
                         {activeTab === "Popular" ? "Bucket list" : activeTab}
                       </p>
@@ -173,8 +200,6 @@ const BucketList = () => {
                 Things We Want To Experience
               </h2>
             </div>
-
-            
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -189,26 +214,20 @@ const BucketList = () => {
                         : "bg-[#E4F8EF]"
                   } rounded-sm md:h-55 h-80  mb-3.5 flex items-center justify-center relative overflow-hidden shadow-xs border border-gray-100/50 transition-all duration-300`}
                 >
-                  <img
+                  <LazyImage
                     src={story.image}
                     alt={story.title}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700"
                   />
 
-                  <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300" />
+                  <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 pointer-events-none z-20" />
 
-                 
-
-                  <div className="absolute left-4 right-4 bottom-4 text-white">
+                  <div className="absolute left-4 right-4 bottom-4 text-white z-30 pointer-events-none">
                     <p className="text-[10px] uppercase tracking-[0.18em] font-bold opacity-90 drop-shadow-xs">
                       {story.date}
                     </p>
                   </div>
                 </div>
-
-              
-
-               
               </div>
             ))}
           </div>
@@ -232,11 +251,11 @@ const BucketList = () => {
               <div>
                 {/* HEADER */}
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-full  flex items-center justify-center font-bold text-white">
-                    <img
+                  <div className="w-10 h-10 rounded-full  flex items-center justify-center font-bold text-white overflow-hidden">
+                    <LazyImage
                       src={img1}
+                      alt="avatar"
                       className="h-full w-full object-cover object-top rounded-full"
-                      alt=""
                     />
                   </div>
 
@@ -250,31 +269,17 @@ const BucketList = () => {
                   </div>
                 </div>
 
-                {/* MESSAGE */}
-                <h3 className="font-bold font-heading text-lg mb-3 text-[#183B56] leading-snug">
-                  Hey Lovee ❤️
-                </h3>
-
                 <p className="text-xs sm:text-sm text-gray-600 text-justify leading-relaxed mb-5">
-                  Ekhn ei sokh gulo puron krte hoito parbona tai ei gulo bucket
-                  list e rakhlm, I belive ekdin eisb nischoi korbo ... Somosto
-                  jaigai eksonge jabo ar jekhanei jabo thik eivabei tmr sob sokh
-                  puron krbo... ❤️
+                  Ekhon hoito sob sokh ekshathe puron kora possible na, tai
+                  kichu sokh ei bucket list e rekhe dilam. ❤️ I believe ekdin na
+                  ekdin amra eisob nischoi korbo. Hoito ektu time lagbe, hoito
+                  majhe majhe plan cancel hobe, taka kom porbe, abar notun plan
+                  banabo 😭😂 but ses obdi sob korbo. Sob jaigai eksonge jabo,
+                  notun notun memories banabo, ar jekhanei jabo, tomar choto
+                  choto sob sokh puron korar chesta korbo, baki sokh gulo sob
+                  puron korar responsibility amar. 😗❤️
                   <br />
                 </p>
-
-                {/* TAGS */}
-                <div className="flex flex-wrap gap-2">
-                  <span className="flex items-center gap-1.5 bg-white border border-[#D9EEF9] px-3 py-1.5 rounded-full text-xs text-[#1687D8]">
-                    <Heart className="w-3 h-3 fill-current" />
-                    My Person
-                  </span>
-
-                  <span className="flex items-center gap-1.5 bg-white border border-[#D9EEF9] px-3 py-1.5 rounded-full text-xs text-[#E63946]">
-                    <Cake className="w-3 h-3" />
-                    Birthday
-                  </span>
-                </div>
               </div>
 
               {/* FOOTER */}
@@ -289,17 +294,17 @@ const BucketList = () => {
 
             <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6 relative">
               <div className="group cursor-pointer bg-[#DFF3FF] rounded-sm h-80 sm:h-96 flex items-center justify-center relative overflow-hidden shadow-xs border border-gray-100/50 transition-all duration-300">
-                <img
+                <LazyImage
                   src="https://i.pinimg.com/736x/df/b0/10/dfb010a4ced5888dc55912773a04d618.jpg"
                   alt="Date"
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 "
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700"
                 />
 
-                <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300" />
+                <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 pointer-events-none z-20" />
 
-                <div className="absolute bottom-5 left-5 right-5 text-white">
+                <div className="absolute bottom-5 left-5 right-5 text-white z-30 pointer-events-none">
                   <p className="text-[10px] uppercase tracking-[0.18em] font-bold opacity-90 drop-shadow-xs">
-                   This Durga Puja
+                    This Durga Puja
                   </p>
                   <p className="font-medium font-heading text-lg mt-0.5">
                     Songe Thakur dekhbo, Ar khub moja krbo
@@ -308,20 +313,20 @@ const BucketList = () => {
               </div>
 
               <div className="group cursor-pointer bg-[#DFF3FF] rounded-sm h-80 sm:h-96 flex items-center justify-center relative overflow-hidden shadow-xs border border-gray-100/50 transition-all duration-300">
-                <img
+                <LazyImage
                   src="https://i.pinimg.com/736x/79/e9/48/79e9488c24dc5ae75cb8bb3c8ac44d82.jpg"
                   alt="Date"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700"
                 />
 
-                <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300" />
+                <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 pointer-events-none z-20" />
 
-                <div className="absolute bottom-5 left-5 right-5 text-white">
+                <div className="absolute bottom-5 left-5 right-5 text-white z-30 pointer-events-none">
                   <p className="text-[10px] uppercase tracking-[0.18em] font-bold opacity-90 drop-shadow-xs">
                     And some day
                   </p>
                   <p className="font-medium font-heading text-lg mt-0.5">
-                    Eksonge Banaras abo 
+                    Eksonge Banaras abo
                   </p>
                 </div>
               </div>
